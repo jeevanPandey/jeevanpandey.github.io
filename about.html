@@ -9,268 +9,312 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://kishorepran.github.io/about.html">
+  <meta property="og:url"         content="https://jeevan-pandey.github.io/about.html">
   <meta property="og:title"       content="About – Jeevan Pandey">
   <meta property="og:description" content="Learn about Jeevan Pandey – iOS Tech Lead, career journey, and work experience.">
-  <meta property="og:image"       content="https://kishorepran.github.io/images/background_aboutme_new.jpg">
+  <meta property="og:image"       content="https://jeevan-pandey.github.io/images/background_aboutme_new.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:site"        content="@jeevan_pandey">
   <meta name="twitter:title"       content="About – Jeevan Pandey">
   <meta name="twitter:description" content="Learn about Jeevan Pandey – iOS Tech Lead, career journey, and work experience.">
-  <meta name="twitter:image"       content="https://kishorepran.github.io/images/background_aboutme_new.jpg">
+  <meta name="twitter:image"       content="https://jeevan-pandey.github.io/images/background_aboutme_new.jpg">
   <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="Favicon/favicon.ico">
   <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles/design-system.css">
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              950: '#020617',
+              900: '#0f172a',
+              800: '#1e293b',
+              400: '#94a3b8',
+              200: '#e2e8f0',
+            },
+            accent: {
+              blue: '#0A84FF',
+              cyan: '#5AC8F5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-slate-950 text-slate-200 font-sans selection:bg-accent-blue/30;
+      }
+      h1, h2, h3 {
+        @apply font-black uppercase tracking-tighter;
+      }
+    }
+    @layer components {
+      .bento-card {
+        @apply bg-slate-900/40 border border-slate-800/60 rounded-3xl backdrop-blur-md hover:border-accent-blue/40 transition-all duration-300;
+      }
+      .glass-nav {
+        @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300;
+      }
+      .btn-primary {
+        @apply bg-accent-blue hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-200 shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/40 active:scale-95;
+      }
+      .btn-secondary {
+        @apply bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+    }
+  </style>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="dark">
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
 
   <!-- ── NAVBAR ───────────────────────────────────────────── -->
   <nav class="glass-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Jeevan<span class="nav-brand-dot">.</span></a>
-      <div class="nav-links">
-        <a href="index.html"     class="nav-pill">Home</a>
-        <a href="portfolio.html" class="nav-pill">Portfolio</a>
-        <a href="about.html"     class="nav-pill">About</a>
-        <a href="blog.html"      class="nav-pill">Blog</a>
-        <a href="resume.html"    class="nav-pill">Resume</a>
-        <a href="contact.html"   class="nav-pill">Contact</a>
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="index.html" class="text-xl font-black tracking-tighter text-white">Jeevan<span class="text-accent-blue">.</span></a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="index.html"     class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Home</a>
+        <a href="portfolio.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Portfolio</a>
+        <a href="about.html"     class="px-4 py-2 rounded-full text-sm font-medium text-white bg-slate-800/50 transition-all">About</a>
+        <a href="blog.html"      class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Blog</a>
+        <a href="resume.html"    class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Resume</a>
+        <a href="contact.html"   class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Contact</a>
       </div>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle"></button>
-        <button class="nav-hamburger" id="nav-hamburger"
-                aria-label="Open navigation menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+      <div class="flex items-center gap-4">
+        <button class="md:hidden flex flex-col gap-1.5 w-10 h-10 items-center justify-center rounded-xl bg-slate-900 border border-slate-800" id="nav-hamburger" aria-label="Menu">
+          <span class="w-5 h-0.5 bg-slate-200"></span>
+          <span class="w-5 h-0.5 bg-slate-200"></span>
+          <span class="w-5 h-0.5 bg-slate-200"></span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html"     class="mobile-nav-pill">Home</a>
-    <a href="portfolio.html" class="mobile-nav-pill">Portfolio</a>
-    <a href="about.html"     class="mobile-nav-pill">About</a>
-    <a href="blog.html"      class="mobile-nav-pill">Blog</a>
-    <a href="resume.html"    class="mobile-nav-pill">Resume</a>
-    <a href="contact.html"   class="mobile-nav-pill">Contact</a>
+  <nav class="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-6" id="mobile-menu">
+    <a href="index.html"     class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Home</a>
+    <a href="portfolio.html" class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Portfolio</a>
+    <a href="about.html"     class="text-2xl font-black uppercase tracking-tighter text-accent-blue transition-colors">About</a>
+    <a href="blog.html"      class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Blog</a>
+    <a href="resume.html"    class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Resume</a>
+    <a href="contact.html"   class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Contact</a>
+    <button class="mt-8 text-slate-500 font-bold uppercase tracking-widest text-xs" id="close-mobile-menu">CLOSE</button>
   </nav>
 
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="hero" aria-label="About hero">
-    <div class="hero-bg"
-         style="background-image: url('images/background_aboutme_new.jpg');"
-         role="img" aria-label="About page background"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Read and learn</p>
-      <h1 class="hero-headline">Who I <span class="accent">Am</span></h1>
+  <section class="relative pt-40 pb-20 px-6 text-center overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <p class="text-accent-blue text-sm font-bold uppercase tracking-[0.3em] mb-6">Introduction</p>
+      <h1 class="text-5xl md:text-8xl leading-none mb-8">WHO I <span class="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-fill-color text-transparent">AM.</span></h1>
     </div>
-    <a href="#fun-facts" class="hero-scroll" aria-label="Scroll to content">
-      <span class="hero-scroll-label">Scroll</span>
-      <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
   </section>
 
   <!-- ── A FEW FUN FACTS ──────────────────────────────────── -->
-  <section class="section" id="fun-facts" aria-labelledby="facts-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">Personal</span>
-        <h2 class="section-title" id="facts-heading">A few fun facts</h2>
-        <p class="section-subtitle">
-          I am a hardware and gadget enthusiast guy. When I am working at a stretch, I love to
-          listen music and grab a cup of coffee. When I am drained out I go for subway to refill
-          and a movie show in theatre follows after.
-        </p>
-      </div>
+  <section class="py-10 px-6 max-w-7xl mx-auto" id="fun-facts">
+    <div class="bento-card p-8 md:p-16 text-center">
+      <span class="text-accent-blue text-xs font-bold uppercase tracking-widest mb-6 block">Personal.</span>
+      <h2 class="text-3xl md:text-4xl mb-8 uppercase">A FEW FUN FACTS.</h2>
+      <p class="text-slate-400 text-lg leading-relaxed max-w-3xl mx-auto">
+        I am a hardware and gadget enthusiast guy. When I am working at a stretch, I love to
+        listen music and grab a cup of coffee. When I am drained out I go for subway to refill
+        and a movie show in theatre follows after.
+      </p>
     </div>
   </section>
 
-  <div class="glass-divider"></div>
-
   <!-- ── A LOOK INTO MY LIFE ──────────────────────────────── -->
-  <section class="section" aria-labelledby="life-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">Day to Day</span>
-        <h2 class="section-title" id="life-heading">A look into my life</h2>
-        <p class="section-subtitle">
+  <section class="py-20 px-6 max-w-7xl mx-auto" id="life-heading">
+    <div class="grid md:grid-cols-2 gap-6 items-center">
+      <div class="bento-card p-10 md:p-16 order-2 md:order-1">
+        <span class="text-accent-blue text-xs font-bold uppercase tracking-widest mb-6 block">Day to Day.</span>
+        <h2 class="text-3xl md:text-4xl mb-8 uppercase tracking-tighter">A LOOK INTO MY LIFE.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed">
           I start my days with a run or swim and stay updated on tech and business trends. On
           weekends, I tutor Math and Physics to keep my analytical skills sharp. Professionally,
           I am a seasoned iOS Tech Lead, expert in the full development lifecycle, and dedicated
           to delivering high-quality mobile solutions.
         </p>
       </div>
+      <div class="rounded-3xl overflow-hidden border border-slate-800 h-full min-h-[400px] order-1 md:order-2">
+        <img src="images/background_aboutme_new.jpg" class="w-full h-full object-cover grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-700" alt="Life">
+      </div>
     </div>
   </section>
 
-  <!-- ── COGNIZANT BANNER ──────────────────────────────── -->
-  <div class="company-banner" aria-hidden="true">
-    <div class="company-banner-bg"
-         style="background-image: url('images/background_home.jpg');"></div>
-    <div class="company-banner-content">
-      <p class="company-banner-pre">My journey continues at</p>
-      <h2 class="company-banner-name">Cognizant</h2>
-    </div>
-  </div>
+  <!-- ── JOURNEY SECTIONS ──────────────────────────────── -->
+  
+  <div class="max-w-7xl mx-auto px-6 py-10"><div class="h-px bg-slate-900"></div></div>
 
-  <!-- ── TECHNICAL ARCHITECT ───────────────────────────── -->
-  <section class="section" aria-labelledby="cognizant-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">Sep 2022 – Till Date</span>
-        <h2 class="section-title" id="cognizant-heading">Technical Architect</h2>
-        <p class="section-subtitle">
-          As a Technical Architect at Cognizant Technology Solutions, I am currently leading the
-          development of high-impact e-commerce applications. My role involves designing and
-          defining complex application structures, creating detailed SRS and HLD documents, and
-          overseeing the technical delivery of projects. I am deeply involved in code reviews,
-          mentoring fellow engineers, and ensuring that our applications meet the highest
-          standards of performance and reliability on the App Store.
+  <!-- Cognizant -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="group relative overflow-hidden rounded-3xl border border-slate-800 p-10 md:p-20 transition-all hover:border-accent-blue/30">
+      <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+        <img src="images/background_home.jpg" class="w-full h-full object-cover" alt="Cognizant BG">
+      </div>
+      <div class="relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+          <div>
+            <span class="text-accent-blue text-xs font-bold uppercase tracking-widest mb-4 block">Sep 2022 – Till Date</span>
+            <h2 class="text-4xl md:text-6xl uppercase tracking-tighter">Technical Architect</h2>
+            <p class="text-xl text-slate-400 mt-2">Cognizant Technology Solutions</p>
+          </div>
+        </div>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed max-w-4xl">
+          Currently leading the development of high-impact e-commerce applications. My role involves 
+          designing and defining complex application structures, creating detailed SRS and HLD documents, 
+          and overseeing the technical delivery of projects. I am deeply involved in code reviews, 
+          mentoring fellow engineers, and ensuring performance and reliability on the App Store.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ── TCS BANNER ───────────────────────── -->
-  <div class="company-banner company-banner--fallback" aria-hidden="true">
-    <div class="company-banner-bg"
-         style="background-image: url('images/background_aboutme_new.jpg');"></div>
-    <div class="company-banner-content">
-      <p class="company-banner-pre">I was an Assistant Consultant at</p>
-      <h2 class="company-banner-name">TCS</h2>
-    </div>
-  </div>
-
-  <!-- ── ASSISTANT CONSULTANT ─────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="tcs-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">2019 – 2022</span>
-        <h2 class="section-title" id="tcs-heading">Assistant Consultant</h2>
-        <p class="section-subtitle">
-          At Tata Consultancy Services (2019 - 2022), I specialized in designing and developing
-          applications from scratch. I collaborated with cross-functional teams to define and ship
-          new features, creating wireframes and related APIs. My responsibilities also included
-          client interactions, providing accurate time estimates, and managing the end-to-end
-          deployment process to the App Store and TestFlight.
+  <!-- TCS -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="group relative overflow-hidden rounded-3xl border border-slate-800 p-10 md:p-20 transition-all hover:border-accent-blue/30">
+      <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+        <img src="images/background_aboutme_new.jpg" class="w-full h-full object-cover" alt="TCS BG">
+      </div>
+      <div class="relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+          <div>
+            <span class="text-accent-blue text-xs font-bold uppercase tracking-widest mb-4 block">2019 – 2022</span>
+            <h2 class="text-4xl md:text-6xl uppercase tracking-tighter">Assistant Consultant</h2>
+            <p class="text-xl text-slate-400 mt-2">Tata Consultancy Services</p>
+          </div>
+        </div>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed max-w-4xl">
+          Specialized in designing and developing applications from scratch. I collaborated with 
+          cross-functional teams to define and ship new features, creating wireframes and related APIs. 
+          Managed the end-to-end deployment process to the App Store and TestFlight.
         </p>
       </div>
     </div>
   </section>
 
-  <div class="glass-divider"></div>
-
-  <!-- ── ATLOGYS BANNER ──────────────────────────────────────── -->
-  <div class="company-banner" aria-hidden="true">
-    <div class="company-banner-bg"
-         style="background-image: url('images/background_atos.jpg');"></div>
-    <div class="company-banner-content">
-      <p class="company-banner-pre">My days working at</p>
-      <h2 class="company-banner-name">Atlogys</h2>
-    </div>
-  </div>
-
-  <!-- ── TECH LEAD ─────────────────────────────── -->
-  <section class="section" aria-labelledby="atlogys-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">2015 – 2019</span>
-        <h2 class="section-title" id="atlogys-heading">Tech Lead</h2>
-        <p class="section-subtitle">
-          Serving as a Tech Lead at Atlogys (2015 - 2019), I was responsible for designing and
-          developing robust application architectures. I focused on web API integrations,
-          conducting feasibility checks with clients, and creating essential technical
-          documentation like SRS and HLD. A key part of my role was mentoring junior developers
-          and fostering a culture of technical excellence.
+  <!-- Atlogys -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="group relative overflow-hidden rounded-3xl border border-slate-800 p-10 md:p-20 transition-all hover:border-accent-blue/30">
+      <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+        <img src="images/background_atos.jpg" class="w-full h-full object-cover" alt="Atlogys BG">
+      </div>
+      <div class="relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+          <div>
+            <span class="text-accent-blue text-xs font-bold uppercase tracking-widest mb-4 block">2015 – 2019</span>
+            <h2 class="text-4xl md:text-6xl uppercase tracking-tighter">Tech Lead</h2>
+            <p class="text-xl text-slate-400 mt-2">Atlogys</p>
+          </div>
+        </div>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed max-w-4xl">
+          Responsible for designing and developing robust application architectures. I focused on 
+          web API integrations, conducting feasibility checks with clients, and creating essential 
+          technical documentation. Mentored junior developers and fostered a culture of excellence.
         </p>
       </div>
     </div>
   </section>
 
-  <div class="glass-divider"></div>
-
-  <!-- ── INDUSNET BANNER ──────────────────────────────────── -->
-  <div class="company-banner" aria-hidden="true">
-    <div class="company-banner-bg"
-         style="background-image: url('images/background_indusnet.jpg');"></div>
-    <div class="company-banner-content">
-      <p class="company-banner-pre">My days working at</p>
-      <h2 class="company-banner-name">Indusnet Technologies</h2>
-    </div>
-  </div>
-
-  <!-- ── SOFTWARE ENGINEER ────────────────────────────────── -->
-  <section class="section" aria-labelledby="indusnet-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">January 2014 – May 2015</span>
-        <h2 class="section-title" id="indusnet-heading">Software Engineer</h2>
-        <p class="section-subtitle">
-          As a Software Engineer at Indusnet Technologies (January 2014 - May 2015, which includes
-          the period at Customer First Infonet), I was an application developer with a background
-          in Computer Science Engineering. I worked on developing iOS Mobile Applications,
-          including working in a dedicated hiring model for offshore clients. My responsibilities
-          included estimating requirements and timelines for maintaining existing and new
-          applications, writing unit test code, distributing builds to internal testers and
-          clients, and checking app store guidelines for project readiness. My passion towards iOS
-          app development helped me accomplish tasks on time, opening doors to explore and enhance
-          my capabilities.
+  <!-- Indusnet -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="group relative overflow-hidden rounded-3xl border border-slate-800 p-10 md:p-20 transition-all hover:border-accent-blue/30">
+      <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+        <img src="images/background_indusnet.jpg" class="w-full h-full object-cover" alt="Indusnet BG">
+      </div>
+      <div class="relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
+          <div>
+            <span class="text-accent-blue text-xs font-bold uppercase tracking-widest mb-4 block">Jan 2014 – May 2015</span>
+            <h2 class="text-4xl md:text-6xl uppercase tracking-tighter">Software Engineer</h2>
+            <p class="text-xl text-slate-400 mt-2">Indusnet Technologies</p>
+          </div>
+        </div>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed max-w-4xl">
+          Worked on developing iOS Mobile Applications, including dedicated hiring models for 
+          offshore clients. Managed requirements estimation, unit testing, and app store readiness 
+          checks. Passionately delivered tasks on time and enhanced technical capabilities.
         </p>
       </div>
     </div>
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <div class="prefooter-cta">
-    <h3>Got an app idea. Need some help?</h3>
-    <a href="mailto:jevonit.as@gmail.com?subject=Connect via website"
-       class="glass-btn glass-btn--primary">Contact Me</a>
-  </div>
+  <section class="py-24 px-6 text-center bg-slate-900/30 border-y border-slate-900">
+    <h3 class="text-3xl md:text-5xl mb-10 uppercase tracking-tighter">GOT AN APP IDEA? <br/> <span class="text-accent-blue">LET'S BUILD IT.</span></h3>
+    <a href="mailto:jevonit.as@gmail.com?subject=Connect via website" class="btn-primary">Get In Touch</a>
+  </section>
 
   </main>
 
   <!-- ── FOOTER ───────────────────────────────────────────── -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html"     class="footer-nav-link">Home</a>
-        <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
-        <a href="about.html"     class="footer-nav-link">About</a>
-        <a href="blog.html"      class="footer-nav-link">Blog</a>
-        <a href="resume.html"    class="footer-nav-link">Resume</a>
-        <a href="contact.html"   class="footer-nav-link">Contact</a>
-        <a href="courtesy.html"  class="footer-nav-link">Courtesy</a>
-      </nav>
-      <div class="footer-social" aria-label="Social media links">
-        <a href="https://www.linkedin.com/in/jeevan_pandey/"
-           class="footer-social-link" aria-label="LinkedIn"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-linkedin.png" alt="LinkedIn" width="20" height="20">
-        </a>
-        <a href="https://twitter.com/jeevan_pandey"
-           class="footer-social-link" aria-label="Twitter"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-twitter.png" alt="Twitter" width="20" height="20">
-        </a>
-        <a href="https://www.facebook.com/jeevan.pandey"
-           class="footer-social-link" aria-label="Facebook"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-facebook.png" alt="Facebook" width="20" height="20">
-        </a>
+  <footer class="py-20 px-6 border-t border-slate-900" role="contentinfo">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+      <div class="text-center md:text-left">
+        <a href="index.html" class="text-2xl font-black tracking-tighter text-white uppercase">Jeevan<span class="text-accent-blue">.</span></a>
+        <p class="text-slate-500 text-xs mt-4 uppercase tracking-[0.2em]">&copy; 2026 JEEVAN PANDEY. ALL RIGHTS RESERVED.</p>
       </div>
-      <p class="footer-copyright">&copy; 2015–2026copy; 2015–2025 Jeevan Pandey. All rights reserved.</p>
+      
+      <div class="flex flex-col items-center md:items-end gap-6">
+        <nav class="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
+          <a href="index.html"     class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Home</a>
+          <a href="portfolio.html" class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Portfolio</a>
+          <a href="about.html"     class="text-xs font-bold text-white uppercase tracking-widest transition-colors">About</a>
+          <a href="blog.html"      class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Blog</a>
+          <a href="resume.html"    class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Resume</a>
+          <a href="contact.html"   class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Contact</a>
+        </nav>
+        
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/in/jeevan-pandey/" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 hover:border-accent-blue transition-colors group">
+            <img src="images/social-linkedin.png" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" alt="LinkedIn">
+          </a>
+          <a href="https://twitter.com/jeevan_pandey" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 hover:border-accent-blue transition-colors group">
+            <img src="images/social-twitter.png" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" alt="Twitter">
+          </a>
+          <a href="https://www.facebook.com/jeevan_pandey" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 hover:border-accent-blue transition-colors group">
+            <img src="images/social-facebook.png" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" alt="Facebook">
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navHamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    
+    navHamburger.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    };
+    
+    closeMobileMenu.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  </script>
 </body>
 </html>

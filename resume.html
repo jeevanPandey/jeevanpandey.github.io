@@ -9,288 +9,319 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://kishorepran.github.io/resume.html">
+  <meta property="og:url"         content="https://jeevan-pandey.github.io/resume.html">
   <meta property="og:title"       content="Resume – Jeevan Pandey">
   <meta property="og:description" content="Resume and skill sets of Jeevan Pandey, iOS Tech Lead with 10+ years of experience.">
-  <meta property="og:image"       content="https://kishorepran.github.io/images/background_resume_latest.jpg">
+  <meta property="og:image"       content="https://jeevan-pandey.github.io/images/background_resume_latest.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:site"        content="@jeevan_pandey">
   <meta name="twitter:title"       content="Resume – Jeevan Pandey">
   <meta name="twitter:description" content="Resume and skill sets of Jeevan Pandey, iOS Tech Lead with 10+ years of experience.">
-  <meta name="twitter:image"       content="https://kishorepran.github.io/images/background_resume_latest.jpg">
+  <meta name="twitter:image"       content="https://jeevan-pandey.github.io/images/background_resume_latest.jpg">
   <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="Favicon/favicon.ico">
   <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles/design-system.css">
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              950: '#020617',
+              900: '#0f172a',
+              800: '#1e293b',
+              400: '#94a3b8',
+              200: '#e2e8f0',
+            },
+            accent: {
+              blue: '#0A84FF',
+              cyan: '#5AC8F5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-slate-950 text-slate-200 font-sans selection:bg-accent-blue/30;
+      }
+      h1, h2, h3 {
+        @apply font-black uppercase tracking-tighter;
+      }
+    }
+    @layer components {
+      .bento-card {
+        @apply bg-slate-900/40 border border-slate-800/60 rounded-3xl backdrop-blur-md hover:border-accent-blue/40 transition-all duration-300;
+      }
+      .glass-nav {
+        @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-slate-950/70 border-b border-slate-800/50 transition-all duration-300;
+      }
+      .btn-primary {
+        @apply bg-accent-blue hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-200 shadow-lg shadow-accent-blue/20 hover:shadow-accent-blue/40 active:scale-95;
+      }
+      .btn-secondary {
+        @apply bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+    }
+  </style>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="dark">
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
 
   <!-- ── NAVBAR ───────────────────────────────────────────── -->
   <nav class="glass-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Jeevan<span class="nav-brand-dot">.</span></a>
-      <div class="nav-links">
-        <a href="index.html"     class="nav-pill">Home</a>
-        <a href="portfolio.html" class="nav-pill">Portfolio</a>
-        <a href="about.html"     class="nav-pill">About</a>
-        <a href="blog.html"      class="nav-pill">Blog</a>
-        <a href="resume.html"    class="nav-pill">Resume</a>
-        <a href="contact.html"   class="nav-pill">Contact</a>
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="index.html" class="text-xl font-black tracking-tighter text-white">Jeevan<span class="text-accent-blue">.</span></a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="index.html"     class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Home</a>
+        <a href="portfolio.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Portfolio</a>
+        <a href="about.html"     class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">About</a>
+        <a href="blog.html"      class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Blog</a>
+        <a href="resume.html"    class="px-4 py-2 rounded-full text-sm font-medium text-white bg-slate-800/50 transition-all">Resume</a>
+        <a href="contact.html"   class="px-4 py-2 rounded-full text-sm font-medium text-slate-400 hover:bg-slate-800/50 hover:text-white transition-all">Contact</a>
       </div>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle"></button>
-        <button class="nav-hamburger" id="nav-hamburger"
-                aria-label="Open navigation menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+      <div class="flex items-center gap-4">
+        <button class="md:hidden flex flex-col gap-1.5 w-10 h-10 items-center justify-center rounded-xl bg-slate-900 border border-slate-800" id="nav-hamburger" aria-label="Menu">
+          <span class="w-5 h-0.5 bg-slate-200"></span>
+          <span class="w-5 h-0.5 bg-slate-200"></span>
+          <span class="w-5 h-0.5 bg-slate-200"></span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html"     class="mobile-nav-pill">Home</a>
-    <a href="portfolio.html" class="mobile-nav-pill">Portfolio</a>
-    <a href="about.html"     class="mobile-nav-pill">About</a>
-    <a href="blog.html"      class="mobile-nav-pill">Blog</a>
-    <a href="resume.html"    class="mobile-nav-pill">Resume</a>
-    <a href="contact.html"   class="mobile-nav-pill">Contact</a>
+  <nav class="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-6" id="mobile-menu">
+    <a href="index.html"     class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Home</a>
+    <a href="portfolio.html" class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Portfolio</a>
+    <a href="about.html"     class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">About</a>
+    <a href="blog.html"      class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Blog</a>
+    <a href="resume.html"    class="text-2xl font-black uppercase tracking-tighter text-accent-blue transition-colors">Resume</a>
+    <a href="contact.html"   class="text-2xl font-black uppercase tracking-tighter text-white hover:text-accent-blue transition-colors">Contact</a>
+    <button class="mt-8 text-slate-500 font-bold uppercase tracking-widest text-xs" id="close-mobile-menu">CLOSE</button>
   </nav>
 
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="hero" aria-label="Resume hero">
-    <div class="hero-bg"
-         style="background-image: url('images/background_resume_latest.jpg');"
-         role="img" aria-label="Resume page background"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">What I've done and My</p>
-      <h1 class="hero-headline"><span class="accent">Skill Sets</span></h1>
-      <div class="hero-actions">
-        <a href="references/jeevan_resume_ios.pdf"
-           class="glass-btn glass-btn--primary" download>Download Resume</a>
-      </div>
+  <section class="relative pt-40 pb-20 px-6 text-center overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0); background-size: 40px 40px;"></div>
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <p class="text-accent-blue text-sm font-bold uppercase tracking-[0.3em] mb-6">Experience & Skills</p>
+      <h1 class="text-5xl md:text-8xl leading-none mb-12">MY <span class="bg-gradient-to-r from-accent-blue to-accent-cyan bg-clip-text text-fill-color text-transparent">RESUME.</span></h1>
+      <a href="references/jeevan_resume_ios.pdf" class="btn-primary" download>Download PDF Resume</a>
     </div>
-    <a href="#technologies" class="hero-scroll" aria-label="Scroll to content">
-      <span class="hero-scroll-label">Scroll</span>
-      <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
   </section>
 
   <!-- ── TECHNOLOGIES ──────────────────────────────────────── -->
-  <section class="section" id="technologies" aria-labelledby="tech-heading">
-    <div class="resume-layout fade-up">
-      <div>
-        <p class="resume-section-label" role="heading" aria-level="2" id="tech-heading">Technologies</p>
+  <section class="py-20 px-6 max-w-7xl mx-auto" id="technologies">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-1">
+        <h2 class="text-xl text-slate-500 sticky top-32">TECHNOLOGIES</h2>
       </div>
-      <div>
-        <div class="grid-2" style="gap:32px; margin-bottom:0;">
-          <div>
-            <p class="subsection-heading" role="heading" aria-level="3">Day-to-Day Comfort</p>
-            <div class="skill-tags">
-              <span class="skill-tag">iOS</span>
-              <span class="skill-tag">Swift</span>
-              <span class="skill-tag">Objective-C</span>
-              <span class="skill-tag">React Native</span>
-              <span class="skill-tag">Xcode</span>
-              <span class="skill-tag">Git & SVN</span>
-              <span class="skill-tag">Jira</span>
-            </div>
+      <div class="md:col-span-3 grid sm:grid-cols-2 gap-10">
+        <div class="bento-card p-8">
+          <h3 class="text-accent-blue text-xs mb-6 tracking-widest">DAY-TO-DAY COMFORT</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">iOS</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Swift</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Objective-C</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">React Native</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Xcode</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Git & SVN</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Jira</span>
           </div>
-          <div>
-            <p class="subsection-heading" role="heading" aria-level="3">Experience With</p>
-            <div class="skill-tags">
-              <span class="skill-tag">Fastlane - CI/CD</span>
-              <span class="skill-tag">Jenkins - for CI/CD</span>
-              <span class="skill-tag">swiftLint</span>
-              <span class="skill-tag">App center</span>
-              <span class="skill-tag">Test flight</span>
-              <span class="skill-tag">Vs code</span>
-            </div>
+        </div>
+        <div class="bento-card p-8">
+          <h3 class="text-accent-blue text-xs mb-6 tracking-widest">EXPERIENCE WITH</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Fastlane</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">CI/CD</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Jenkins</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">SwiftLint</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">App Center</span>
+            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-lg text-xs font-semibold border border-slate-700">Test Flight</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="glass-divider"></div>
 
   <!-- ── iOS CORE SKILLS ──────────────────────────────────── -->
-  <section class="section" aria-labelledby="ios-heading">
-    <div class="resume-layout fade-up">
-      <div>
-        <p class="resume-section-label" role="heading" aria-level="2" id="ios-heading">iOS Core Skills</p>
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-1">
+        <h2 class="text-xl text-slate-500 sticky top-32">iOS CORE SKILLS</h2>
       </div>
-      <div>
-        <div class="ios-skill-block">
-          <h4>Objective C / Swift</h4>
-          <p>Design patterns MVC, Delegation, Singleton, Concurrency management, collection types. ARC, Optional Chaining, Protocols, Extensions, Generics.</p>
+      <div class="md:col-span-3 grid sm:grid-cols-2 gap-6">
+        <div class="bento-card p-8">
+          <h4 class="text-white text-sm mb-4">OBJECTIVE C / SWIFT</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Design patterns MVC, Delegation, Singleton, Concurrency management, collection types. ARC, Optional Chaining, Protocols, Extensions, Generics.</p>
         </div>
-        <div class="ios-skill-block">
-          <h4>Frameworks</h4>
-          <p>Address book, Assets Library, Core Graphics / Image / Location / Text / Video / Motion, Foundation, Health Kit, Map Kit, Media player, Sql Lite 3.0, Security, Social. XCTest for unit &amp; UI testing.</p>
+        <div class="bento-card p-8">
+          <h4 class="text-white text-sm mb-4">FRAMEWORKS</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Core Graphics / Image / Location / Text / Video / Motion, Foundation, Health Kit, Map Kit, Sql Lite 3.0, Security, Social. XCTest for unit & UI testing.</p>
         </div>
-        <div class="ios-skill-block">
-          <h4>Features</h4>
-          <p>App extensions, Handoff, UIKit Dynamics, Background fetch, Siri kit, Size classes, Interactive APNS, Local notifications, Custom Gesture recognizers.</p>
+        <div class="bento-card p-8">
+          <h4 class="text-white text-sm mb-4">FEATURES</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">App extensions, Handoff, UIKit Dynamics, Background fetch, Siri kit, Size classes, Interactive APNS, Local notifications.</p>
         </div>
-        <div class="ios-skill-block">
-          <h4>Core Services</h4>
-          <p>GCD, In app purchase, SQL Lite, Core data.</p>
-        </div>
-        <div class="ios-skill-block">
-          <h4>App Management</h4>
-          <p>Generating Certificate &amp; provisioning, iTunes connect configuration App store upload, test flight distribution both internal &amp; external, App analytics.</p>
-        </div>
-        <div class="ios-skill-block">
-          <h4>Xcode / Others</h4>
-          <p>Integration of third party frameworks via COCOA PODS, Instruments, Time profiling, allocation, memory leaks, LLDB, Custom breakpoints, View Debugger, Touch ID, Source editor extensions, Barometer, Three Axis Gyro, Accelerometer. Ethical Hacking - Jailbreaking iPhone, MTM (Man in the Middle attack), Reverse Engineering Binary.</p>
+        <div class="bento-card p-8">
+          <h4 class="text-white text-sm mb-4">APP MANAGEMENT</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">iTunes connect configuration, App store upload, test flight distribution both internal & external, App analytics.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="glass-divider"></div>
 
   <!-- ── WORK EXPERIENCE ──────────────────────────────────── -->
-  <section class="section" aria-labelledby="work-heading">
-    <div class="resume-layout fade-up">
-      <div>
-        <p class="resume-section-label" role="heading" aria-level="2" id="work-heading">Work Experience</p>
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-1">
+        <h2 class="text-xl text-slate-500 sticky top-32">EXPERIENCE</h2>
       </div>
-      <div>
-
-        <div class="work-item">
-          <div class="work-item-title">Technical Architect</div>
-          <div class="work-item-meta">
-            <span>Cognizant Technology Solutions</span>
-            <span class="sep">·</span>
-            <span class="period">Sept 2022 – Till Date</span>
+      <div class="md:col-span-3 space-y-6">
+        
+        <div class="bento-card p-8 md:p-12 hover:translate-x-2 transition-transform">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+            <div>
+              <h3 class="text-2xl text-white">Technical Architect</h3>
+              <p class="text-accent-blue font-bold">Cognizant Technology Solutions</p>
+            </div>
+            <p class="text-slate-500 text-sm mt-2 font-bold uppercase tracking-widest">Sept 2022 – Till Date</p>
           </div>
-          <p class="work-item-desc">Working with organisation's client app which is e-commerce app. Design and define application structure by following various design pattern. Creating SRS and HLD for application requirement. Code review of peer and fellow engineers. Merging PR and application release on app store. Coding and bug fixes. Giving estimation to various stack holders. Integration of 3rd party libraries into the codebase.</p>
+          <p class="text-slate-400 leading-relaxed">
+            Leading the development of complex e-commerce applications. Design and define application structure, SRS and HLD documentation, code reviews, and App Store releases.
+          </p>
         </div>
 
-        <div class="work-item">
-          <div class="work-item-title">Assistant Consultant</div>
-          <div class="work-item-meta">
-            <span>Tata Consultancy Services</span>
-            <span class="sep">·</span>
-            <span class="period">2019 – 2022</span>
+        <div class="bento-card p-8 md:p-12 hover:translate-x-2 transition-transform">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+            <div>
+              <h3 class="text-2xl text-white">Assistant Consultant</h3>
+              <p class="text-accent-blue font-bold">Tata Consultancy Services</p>
+            </div>
+            <p class="text-slate-500 text-sm mt-2 font-bold uppercase tracking-widest">2019 – 2022</p>
           </div>
-          <p class="work-item-desc">Design and develop the applications from scratch and bug fixes. Collaborate with cross-functional teams to define, design and ship new features to generate wireframes and related APIs. Create HLD and design document for app modules. Uploading the apps into app store and test flight. Client Interactions and giving time estimates.</p>
+          <p class="text-slate-400 leading-relaxed">
+            Design and develop applications from scratch. Collaborate with cross-functional teams to ship new features. Wireframes and API integration.
+          </p>
         </div>
 
-        <div class="work-item">
-          <div class="work-item-title">Tech Lead</div>
-          <div class="work-item-meta">
-            <span>Atlogys</span>
-            <span class="sep">·</span>
-            <span class="period">2015 – 2019</span>
+        <div class="bento-card p-8 md:p-12 hover:translate-x-2 transition-transform">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+            <div>
+              <h3 class="text-2xl text-white">Tech Lead</h3>
+              <p class="text-accent-blue font-bold">Atlogys</p>
+            </div>
+            <p class="text-slate-500 text-sm mt-2 font-bold uppercase tracking-widest">2015 – 2019</p>
           </div>
-          <p class="work-item-desc">Design and develop app architecture. Web api integrations. Feasibility check with clients. Creation of SRS and HLD when required. Mentoring Juniors.</p>
-        </div>
-
-        <div class="work-item">
-          <div class="work-item-title">Senior Software Engineer</div>
-          <div class="work-item-meta">
-            <span>Algoworks</span>
-            <span class="sep">·</span>
-            <span class="period">2014 – 2015</span>
-          </div>
-          <p class="work-item-desc">End to end app development. Integration of web api into the app. Bug fixes and performance enhancements.</p>
-        </div>
-
-        <div class="work-item">
-          <div class="work-item-title">Software Engineer</div>
-          <div class="work-item-meta">
-            <span>iGate</span>
-            <span class="sep">·</span>
-            <span class="period">2011 – 2014</span>
-          </div>
-          <p class="work-item-desc">Design and build advanced applications for the iOS platform. Work on bug fixing and improving application performance. Ensure the performance, quality, and responsiveness of applications.</p>
+          <p class="text-slate-400 leading-relaxed">
+            Design and develop app architecture. Web API integrations. Feasibility checks with clients. Mentoring junior developers.
+          </p>
         </div>
 
       </div>
     </div>
   </section>
-
-  <div class="glass-divider"></div>
 
   <!-- ── EDUCATION ─────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="edu-heading">
-    <div class="resume-layout fade-up">
-      <div>
-        <p class="resume-section-label" role="heading" aria-level="2" id="edu-heading">Education</p>
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-1">
+        <h2 class="text-xl text-slate-500 sticky top-32">EDUCATION</h2>
       </div>
-      <div>
-
-        <div class="work-item">
-          <div class="work-item-title">B. Tech. (CSE)</div>
-          <div class="work-item-meta">
-            <span>NIT Patna</span>
-            <span class="sep">·</span>
-            <span class="period">2007 – 2011</span>
+      <div class="md:col-span-3">
+        <div class="bento-card p-8 md:p-12">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+            <div>
+              <h3 class="text-2xl text-white uppercase">B. Tech. (CSE)</h3>
+              <p class="text-accent-blue font-bold uppercase">NIT Patna</p>
+            </div>
+            <p class="text-slate-500 text-sm mt-2 font-bold uppercase tracking-widest">2007 – 2011</p>
           </div>
-          <p class="work-item-desc">Gaining deep understanding of computer science principles, data structures, algorithms, and software engineering methodologies.</p>
+          <p class="text-slate-400 leading-relaxed">
+            Gaining deep understanding of computer science principles, data structures, algorithms, and software engineering methodologies.
+          </p>
         </div>
-
       </div>
     </div>
-  </section>
-
-  <!-- ── CTA ───────────────────────────────────────────────── -->
-  <section class="section fade-up" style="text-align:center;" aria-label="Call to action">
-    <a href="contact.html" class="glass-btn glass-btn--primary">Interested? Say hello.</a>
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <div class="prefooter-cta">
-    <h3>Got an app idea. Need some help?</h3>
-    <a href="mailto:jevonit.as@gmail.com?subject=Connect via website"
-       class="glass-btn glass-btn--primary">Contact Me</a>
-  </div>
+  <section class="py-24 px-6 text-center bg-slate-900/30 border-y border-slate-900">
+    <h3 class="text-3xl md:text-5xl mb-10 uppercase tracking-tighter">INTERESTED? <br/> <span class="text-accent-blue">SAY HELLO.</span></h3>
+    <a href="contact.html" class="btn-primary">Contact Me</a>
+  </section>
 
   </main>
 
   <!-- ── FOOTER ───────────────────────────────────────────── -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html"     class="footer-nav-link">Home</a>
-        <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
-        <a href="about.html"     class="footer-nav-link">About</a>
-        <a href="blog.html"      class="footer-nav-link">Blog</a>
-        <a href="resume.html"    class="footer-nav-link">Resume</a>
-        <a href="contact.html"   class="footer-nav-link">Contact</a>
-        <a href="courtesy.html"  class="footer-nav-link">Courtesy</a>
-      </nav>
-      <div class="footer-social" aria-label="Social media links">
-        <a href="https://www.linkedin.com/in/jeevan_pandey/"
-           class="footer-social-link" aria-label="LinkedIn"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-linkedin.png" alt="LinkedIn" width="20" height="20">
-        </a>
-        <a href="https://twitter.com/jeevan_pandey"
-           class="footer-social-link" aria-label="Twitter"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-twitter.png" alt="Twitter" width="20" height="20">
-        </a>
-        <a href="https://www.facebook.com/jeevan.pandey"
-           class="footer-social-link" aria-label="Facebook"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-facebook.png" alt="Facebook" width="20" height="20">
-        </a>
+  <footer class="py-20 px-6 border-t border-slate-900" role="contentinfo">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+      <div class="text-center md:text-left">
+        <a href="index.html" class="text-2xl font-black tracking-tighter text-white uppercase">Jeevan<span class="text-accent-blue">.</span></a>
+        <p class="text-slate-500 text-xs mt-4 uppercase tracking-[0.2em]">&copy; 2026 JEEVAN PANDEY. ALL RIGHTS RESERVED.</p>
       </div>
-      <p class="footer-copyright">&copy; 2015–2026copy; 2015–2025 Jeevan Pandey. All rights reserved.</p>
+      
+      <div class="flex flex-col items-center md:items-end gap-6">
+        <nav class="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
+          <a href="index.html"     class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Home</a>
+          <a href="portfolio.html" class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Portfolio</a>
+          <a href="about.html"     class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">About</a>
+          <a href="blog.html"      class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Blog</a>
+          <a href="resume.html"    class="text-xs font-bold text-white uppercase tracking-widest transition-colors">Resume</a>
+          <a href="contact.html"   class="text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest transition-colors">Contact</a>
+        </nav>
+        
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/in/jeevan-pandey/" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 hover:border-accent-blue transition-colors group">
+            <img src="images/social-linkedin.png" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" alt="LinkedIn">
+          </a>
+          <a href="https://twitter.com/jeevan_pandey" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 hover:border-accent-blue transition-colors group">
+            <img src="images/social-twitter.png" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" alt="Twitter">
+          </a>
+          <a href="https://www.facebook.com/jeevan_pandey" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-800 hover:border-accent-blue transition-colors group">
+            <img src="images/social-facebook.png" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" alt="Facebook">
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navHamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    
+    navHamburger.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    };
+    
+    closeMobileMenu.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  </script>
 </body>
 </html>
