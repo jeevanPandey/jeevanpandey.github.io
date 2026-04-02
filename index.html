@@ -80,6 +80,15 @@
       .minimal-card {
         @apply border border-neutral-900 rounded-2xl bg-neutral-900/20 hover:border-neutral-700 transition-all duration-500 p-8 md:p-12;
       }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -122,7 +131,7 @@
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="relative min-h-[85vh] flex flex-col items-center justify-center px-6 text-center">
+  <section class="relative min-h-[85vh] flex flex-col items-center justify-center px-6 text-center reveal active">
     <div class="relative z-10 max-w-4xl animate-fade-in">
       <p class="text-neutral-500 text-sm md:text-base font-medium uppercase tracking-[0.2em] mb-8">iOS Technical Architect</p>
       <h1 class="text-6xl md:text-8xl lg:text-[10rem] mb-12 leading-[0.85] tracking-tightest">
@@ -141,7 +150,7 @@
   </section>
 
   <!-- ── A BRIEF BACKGROUND ───────────────────────────────── -->
-  <section class="py-20 px-6 max-w-5xl mx-auto" id="background">
+  <section class="py-20 px-6 max-w-5xl mx-auto reveal" id="background">
     <div class="space-y-8">
       <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">About</span>
       <h2 class="text-4xl md:text-6xl leading-tight">A BRIEF BACKGROUND.</h2>
@@ -156,7 +165,7 @@
   <div class="max-w-6xl mx-auto px-6"><div class="h-px bg-neutral-900"></div></div>
 
   <!-- ── MY LATEST PROJECTS ───────────────────────────────── -->
-  <section class="py-20 px-6 max-w-6xl mx-auto" aria-labelledby="projects-heading">
+  <section class="py-20 px-6 max-w-6xl mx-auto reveal" aria-labelledby="projects-heading">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
       <div>
         <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-4 block">Portfolio</span>
@@ -193,7 +202,7 @@
   <div class="max-w-6xl mx-auto px-6"><div class="h-px bg-neutral-900"></div></div>
 
   <!-- ── THE JOURNEY ──────────────────────────────────────── -->
-  <section class="py-20 px-6 max-w-5xl mx-auto" aria-labelledby="journey-heading">
+  <section class="py-20 px-6 max-w-5xl mx-auto reveal" aria-labelledby="journey-heading">
     <div class="space-y-8">
       <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">Story</span>
       <h2 class="text-4xl md:text-6xl" id="journey-heading">THE JOURNEY.</h2>
@@ -206,7 +215,7 @@
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <section class="py-20 px-6 text-center border-t border-neutral-900">
+  <section class="py-20 px-6 text-center border-t border-neutral-900 reveal">
     <h3 class="text-4xl md:text-7xl mb-8 tracking-tightest">HAVE AN IDEA?</h3>
     <a href="mailto:jevonit.as@gmail.com" class="btn-primary">Connect with me</a>
   </section>
@@ -255,6 +264,20 @@
     
     closeMobileMenu.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
 
     // Simple Intersection Observer for Fade-in animations
     const observerOptions = { threshold: 0.1 };

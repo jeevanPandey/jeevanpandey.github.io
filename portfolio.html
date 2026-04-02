@@ -80,6 +80,18 @@
       .minimal-card {
         @apply border border-neutral-900 rounded-2xl bg-neutral-900/20 hover:border-neutral-700 transition-all duration-500 p-8 md:p-12;
       }
+      .tech-tag {
+        @apply text-[9px] font-bold text-neutral-400 uppercase tracking-tighter bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded;
+      }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -122,7 +134,7 @@
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="relative pt-32 pb-12 px-6 text-center">
+  <section class="relative pt-32 pb-12 px-6 text-center reveal active">
     <div class="max-w-4xl mx-auto">
       <p class="text-neutral-500 text-sm font-medium uppercase tracking-widest mb-6">Portfolio</p>
       <h1 class="text-6xl md:text-8xl lg:text-9xl leading-none mb-8 tracking-tightest">MY <span class="text-neutral-500 italic">WORK.</span></h1>
@@ -130,7 +142,7 @@
   </section>
 
   <!-- ── INTRO ─────────────────────────────────────────────── -->
-  <section class="py-12 px-6 max-w-4xl mx-auto" id="work-intro">
+  <section class="py-12 px-6 max-w-4xl mx-auto reveal" id="work-intro">
     <div class="space-y-6">
       <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">iOS Development</span>
       <h2 class="text-3xl md:text-5xl leading-tight uppercase">Coding with passion, <br/> developing with care.</h2>
@@ -145,7 +157,7 @@
     <div class="grid md:grid-cols-2 gap-16 md:gap-24">
 
       <!-- Project 1 -->
-      <div class="group space-y-6">
+      <div class="group space-y-6 reveal">
         <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
           <img src="images/background_home.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Connected clinical Trials">
         </div>
@@ -155,11 +167,16 @@
             <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest border border-neutral-800 px-2 py-1 rounded">Internal</span>
           </div>
           <p class="text-neutral-500 text-lg">CCT platform for patient-centric trials</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tech-tag">UIKit</span>
+            <span class="tech-tag">CoreData</span>
+            <span class="tech-tag">Encryption</span>
+          </div>
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="group space-y-6">
+      <div class="group space-y-6 reveal">
         <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
           <img src="images/background_aboutme_new.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Govinda">
         </div>
@@ -169,11 +186,16 @@
             <a href="https://apps.apple.com/in/app/govinda-tirumala-tirupati/id1217015929" target="_blank" class="text-xs font-bold text-neutral-400 hover:text-white transition-colors border-b border-neutral-800 hover:border-white pb-1">APP STORE →</a>
           </div>
           <p class="text-neutral-500 text-lg">TTD app for devotees of Lord Sri Venkateswara</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">Maps</span>
+            <span class="tech-tag">Live Streaming</span>
+          </div>
         </div>
       </div>
 
       <!-- Project 3 -->
-      <div class="group space-y-6">
+      <div class="group space-y-6 reveal">
         <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
           <img src="images/background_blog.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Experchat">
         </div>
@@ -183,11 +205,16 @@
             <a href="https://itunes.apple.com/us/app/experchat-beauty-and-fashion/id1207187049?mt=8" target="_blank" class="text-xs font-bold text-neutral-400 hover:text-white transition-colors border-b border-neutral-800 hover:border-white pb-1">APP STORE →</a>
           </div>
           <p class="text-neutral-500 text-lg">B2C Cross-Platform Mobile & Web application</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tech-tag">WebRTC</span>
+            <span class="tech-tag">Socket.io</span>
+            <span class="tech-tag">Payments</span>
+          </div>
         </div>
       </div>
 
       <!-- Project 4 -->
-      <div class="group space-y-6">
+      <div class="group space-y-6 reveal">
         <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
           <img src="images/background_contactme.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Avid">
         </div>
@@ -197,6 +224,11 @@
             <a href="https://itunes.apple.com/us/app/mancrunch/id964585872?mt=8" target="_blank" class="text-xs font-bold text-neutral-400 hover:text-white transition-colors border-b border-neutral-800 hover:border-white pb-1">APP STORE →</a>
           </div>
           <p class="text-neutral-500 text-lg">B2C Cross-Platform audio/video/text chat</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tech-tag">AVFoundation</span>
+            <span class="tech-tag">VoIP</span>
+            <span class="tech-tag">Real-time</span>
+          </div>
         </div>
       </div>
 
@@ -204,7 +236,7 @@
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <section class="py-24 px-6 text-center border-t border-neutral-900">
+  <section class="py-24 px-6 text-center border-t border-neutral-900 reveal">
     <h3 class="text-4xl md:text-7xl mb-10 tracking-tightest uppercase">HAVE AN IDEA?</h3>
     <a href="mailto:jevonit.as@gmail.com" class="btn-primary">Connect with me</a>
   </section>
@@ -253,6 +285,21 @@
     
     closeMobileMenu.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    // Scroll Reveal Animation
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal(); // Initial check
   </script>
 </body>
 </html>

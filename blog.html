@@ -80,6 +80,15 @@
       .minimal-card {
         @apply border border-neutral-900 rounded-2xl bg-neutral-900/20 hover:border-neutral-700 transition-all duration-500 p-8 md:p-12;
       }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -122,7 +131,7 @@
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="relative pt-32 pb-12 px-6 text-center">
+  <section class="reveal active relative pt-32 pb-12 px-6 text-center">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-neutral-500 text-sm font-medium uppercase tracking-widest mb-6">Blog Post</p>
       <h1 class="text-4xl md:text-7xl lg:text-8xl leading-none mb-8 tracking-tightest uppercase">DISCOVERIES & <span class="text-neutral-500 italic">THOUGHTS.</span></h1>
@@ -130,7 +139,7 @@
   </section>
 
   <!-- ── CURATED READS ──────────────────────────────────────── -->
-  <section class="py-12 px-6 max-w-4xl mx-auto" id="curated-reads">
+  <section class="reveal py-12 px-6 max-w-4xl mx-auto" id="curated-reads">
     <div class="space-y-16">
       <div class="space-y-4">
         <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">Resource Hub</span>
@@ -182,7 +191,7 @@
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <section class="py-24 px-6 text-center border-t border-neutral-900">
+  <section class="reveal py-24 px-6 text-center border-t border-neutral-900">
     <h3 class="text-4xl md:text-7xl mb-10 tracking-tightest uppercase">Want to connect?</h3>
     <a href="contact.html" class="btn-primary">Get in touch</a>
   </section>
@@ -231,6 +240,21 @@
     
     closeMobileMenu.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    // Scroll Reveal
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
   </script>
 </body>
 </html>
