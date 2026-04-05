@@ -3,173 +3,245 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Contact – Pran Kishore</title>
-  <meta name="description" content="Get in touch with Pran Kishore – iOS developer based in Kolkata, India.">
-  <meta name="author" content="Pran Kishore">
+  <title>Contact – Jeevan Pandey</title>
+  <meta name="description" content="Get in touch with Jeevan Pandey – iOS developer based in New Delhi, India.">
+  <meta name="author" content="Jeevan Pandey">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://kishorepran.github.io/contact.html">
-  <meta property="og:title"       content="Contact – Pran Kishore">
-  <meta property="og:description" content="Get in touch with Pran Kishore – iOS developer based in Kolkata, India.">
-  <meta property="og:image"       content="https://kishorepran.github.io/images/background_contactme.jpg">
+  <meta property="og:url"         content="https://jeevan-pandey.github.io/contact.html">
+  <meta property="og:title"       content="Contact – Jeevan Pandey">
+  <meta property="og:description" content="Get in touch with Jeevan Pandey – iOS developer based in New Delhi, India.">
+  <meta property="og:image"       content="https://jeevan-pandey.github.io/images/background_contactme.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:site"        content="@pran_kishore">
-  <meta name="twitter:title"       content="Contact – Pran Kishore">
-  <meta name="twitter:description" content="Get in touch with Pran Kishore – iOS developer based in Kolkata, India.">
-  <meta name="twitter:image"       content="https://kishorepran.github.io/images/background_contactme.jpg">
+  <meta name="twitter:site"        content="@jevonit">
+  <meta name="twitter:title"       content="Contact – Jeevan Pandey">
+  <meta name="twitter:description" content="Get in touch with Jeevan Pandey – iOS developer based in New Delhi, India.">
+  <meta name="twitter:image"       content="https://jeevan-pandey.github.io/images/background_contactme.jpg">
   <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="Favicon/favicon.ico">
   <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles/design-system.css">
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            neutral: {
+              950: '#0a0a0a',
+              900: '#171717',
+              800: '#262626',
+              700: '#404040',
+              400: '#a3a3a3',
+              200: '#e5e5e5',
+            }
+          },
+          letterSpacing: {
+            tightest: '-0.07em',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-white/10;
+      }
+      h1, h2, h3 {
+        @apply font-semibold tracking-tight text-white;
+      }
+    }
+    @layer components {
+      .section-divider {
+        @apply border-t border-neutral-900 my-16 md:my-20;
+      }
+      .glass-nav {
+        @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-neutral-950/50 border-b border-neutral-900 transition-all duration-300;
+      }
+      .btn-primary {
+        @apply bg-white hover:bg-neutral-200 text-black font-medium py-3 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+      .btn-secondary {
+        @apply bg-transparent hover:bg-neutral-900 border border-neutral-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+      .minimal-card {
+        @apply border border-neutral-900 rounded-2xl bg-neutral-900/20 hover:border-neutral-700 transition-all duration-500 p-8 md:p-12;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="dark">
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
 
   <!-- ── NAVBAR ───────────────────────────────────────────── -->
   <nav class="glass-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Pran<span class="nav-brand-dot">.</span></a>
-      <div class="nav-links">
-        <a href="index.html"     class="nav-pill">Home</a>
-        <a href="portfolio.html" class="nav-pill">Portfolio</a>
-        <a href="about.html"     class="nav-pill">About</a>
-        <a href="blog.html"      class="nav-pill">Blog</a>
-        <a href="resume.html"    class="nav-pill">Resume</a>
-        <a href="contact.html"   class="nav-pill">Contact</a>
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold text-xl hover:scale-110 transition-transform">J</a>
+      
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Home</a>
+        <a href="portfolio.html" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Portfolio</a>
+        <a href="about.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">About</a>
+        <a href="blog.html"      class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Blog</a>
+        <a href="resume.html"    class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Resume</a>
+        <a href="contact.html"   class="px-5 py-2 bg-white text-black rounded-full text-xs font-bold hover:bg-neutral-200 transition-colors ml-4">Contact</a>
       </div>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle"></button>
-        <button class="nav-hamburger" id="nav-hamburger"
-                aria-label="Open navigation menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+
+      <div class="flex items-center gap-4">
+        <button class="md:hidden flex flex-col gap-1.5 w-10 h-10 items-center justify-center rounded-xl bg-neutral-900 border border-neutral-800" id="nav-hamburger" aria-label="Menu">
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html"     class="mobile-nav-pill">Home</a>
-    <a href="portfolio.html" class="mobile-nav-pill">Portfolio</a>
-    <a href="about.html"     class="mobile-nav-pill">About</a>
-    <a href="blog.html"      class="mobile-nav-pill">Blog</a>
-    <a href="resume.html"    class="mobile-nav-pill">Resume</a>
-    <a href="contact.html"   class="mobile-nav-pill">Contact</a>
+  <nav class="fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-2xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+    <a href="index.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">Home</a>
+    <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+    <a href="about.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">About</a>
+    <a href="blog.html"      class="text-3xl font-bold tracking-tighter text-white uppercase">Blog</a>
+    <a href="resume.html"    class="text-3xl font-bold tracking-tighter text-white uppercase">Resume</a>
+    <a href="contact.html"   class="text-3xl font-bold tracking-tighter text-white uppercase">Contact</a>
+    <button class="mt-12 text-neutral-500 font-bold uppercase tracking-widest text-xs" id="close-mobile-menu">CLOSE</button>
   </nav>
 
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="hero" aria-label="Contact hero">
-    <div class="hero-bg"
-         style="background-image: url('images/background_contactme.jpg');"
-         role="img" aria-label="Contact page background"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Send a friendly</p>
-      <h1 class="hero-headline"><span class="accent">Hello</span></h1>
+  <section class="reveal active relative pt-32 pb-12 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-neutral-500 text-sm font-medium uppercase tracking-widest mb-6">Contact</p>
+      <h1 class="text-6xl md:text-8xl lg:text-9xl leading-none mb-8 tracking-tightest uppercase text-white">SAY <span class="text-neutral-500 italic">HELLO.</span></h1>
     </div>
-    <a href="#contact-info" class="hero-scroll" aria-label="Scroll to content">
-      <span class="hero-scroll-label">Scroll</span>
-      <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
   </section>
 
   <!-- ── CONTACT INFO ──────────────────────────────────────── -->
-  <section class="section" id="contact-info" aria-labelledby="contact-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body">
-        <h2 class="contact-info-heading" id="contact-heading">Contact Information</h2>
-        <div class="contact-info-grid">
+  <section class="reveal py-12 px-6 max-w-6xl mx-auto" id="contact-info">
+    <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+      
+      <div class="space-y-12">
+        <div class="space-y-3">
+          <h2 class="text-xs text-neutral-500 font-bold uppercase tracking-widest">Jeevan Pandey</h2>
+          <p class="text-4xl md:text-5xl tracking-tighter uppercase text-white">Let's connect.</p>
+        </div>
 
-          <div>
-            <p class="contact-info-name">Pran Kishore</p>
-
-            <div class="contact-detail">
-              <span class="contact-detail-label">Address</span>
-              <span class="contact-detail-value">
-                7, N.P Garden Road<br>Kolkata – 700078<br>West Bengal, India.
-              </span>
-            </div>
-
-            <div class="contact-detail">
-              <span class="contact-detail-label">Phone</span>
-              <span class="contact-detail-value">
-                <a href="tel:+919330568475">+91-9330568475</a>
-              </span>
-            </div>
-
-            <div class="contact-detail">
-              <span class="contact-detail-label">Skype</span>
-              <span class="contact-detail-value">prankishore19</span>
-            </div>
-
-            <div class="contact-detail">
-              <span class="contact-detail-label">Email</span>
-              <span class="contact-detail-value">
-                <a href="mailto:kishorepran@gmail.com">kishorepran@gmail.com</a>
-              </span>
-            </div>
+        <div class="space-y-8">
+          <div class="space-y-1">
+            <span class="text-xs font-bold text-neutral-600 uppercase tracking-widest block">Address</span>
+            <p class="text-neutral-300 text-xl">Saket, New Delhi, India.</p>
           </div>
 
-          <div>
-            <img src="images/croppedPic.jpg"
-                 alt="Pran Kishore"
-                 class="profile-photo"
-                 loading="lazy">
+          <div class="space-y-1">
+            <span class="text-xs font-bold text-neutral-600 uppercase tracking-widest block">Phone</span>
+            <a href="tel:+919871425639" class="text-white text-xl hover:text-neutral-400 transition-colors underline underline-offset-8">+91 9871425639</a>
           </div>
 
+          <div class="space-y-1">
+            <span class="text-xs font-bold text-neutral-600 uppercase tracking-widest block">Email</span>
+            <a href="mailto:jevonit.as@gmail.com" class="text-white text-xl hover:text-neutral-400 transition-colors underline underline-offset-8">jevonit.as@gmail.com</a>
+          </div>
         </div>
       </div>
+
+      <div class="relative">
+        <img src="images/croppedPic.jpg" alt="Jeevan Pandey" class="w-full rounded-2xl grayscale opacity-80 border border-neutral-900 shadow-2xl">
+      </div>
+
     </div>
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <div class="prefooter-cta">
-    <h3>Got an app idea. Need some help?</h3>
-    <a href="mailto:kishorepran@gmail.com?subject=Connect via website"
-       class="glass-btn glass-btn--primary">Contact Me</a>
-  </div>
+  <section class="reveal py-24 px-6 text-center border-t border-neutral-900">
+    <h3 class="text-4xl md:text-7xl mb-10 tracking-tightest uppercase">Have a project?</h3>
+    <a href="mailto:jevonit.as@gmail.com" class="btn-primary">Work with me</a>
+  </section>
 
   </main>
 
   <!-- ── FOOTER ───────────────────────────────────────────── -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html"     class="footer-nav-link">Home</a>
-        <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
-        <a href="about.html"     class="footer-nav-link">About</a>
-        <a href="blog.html"      class="footer-nav-link">Blog</a>
-        <a href="resume.html"    class="footer-nav-link">Resume</a>
-        <a href="contact.html"   class="footer-nav-link">Contact</a>
-        <a href="courtesy.html"  class="footer-nav-link">Courtesy</a>
-      </nav>
-      <div class="footer-social" aria-label="Social media links">
-        <a href="https://www.linkedin.com/in/pran-kishore/"
-           class="footer-social-link" aria-label="LinkedIn"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-linkedin.png" alt="LinkedIn" width="20" height="20">
-        </a>
-        <a href="https://twitter.com/pran_kishore"
-           class="footer-social-link" aria-label="Twitter"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-twitter.png" alt="Twitter" width="20" height="20">
-        </a>
-        <a href="https://www.facebook.com/pran.kishore.1"
-           class="footer-social-link" aria-label="Facebook"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-facebook.png" alt="Facebook" width="20" height="20">
-        </a>
+  <footer class="py-16 px-6 border-t border-neutral-900" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      <div>
+        <a href="index.html" class="text-lg font-bold tracking-tight text-white whitespace-nowrap">Jeevan Pandey<span class="text-neutral-500">.</span></a>
+        <p class="text-neutral-600 text-xs mt-4 uppercase tracking-[0.2em]">&copy; 2026. ALL RIGHTS RESERVED.</p>
       </div>
-      <p class="footer-copyright">&copy; 2015–2026 Pran Kishore. All rights reserved.</p>
+      
+      <div class="flex flex-col items-start md:items-end gap-8">
+        <nav class="flex flex-wrap gap-8" aria-label="Footer navigation">
+          <a href="index.html"     class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Home</a>
+          <a href="portfolio.html" class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Portfolio</a>
+          <a href="about.html"     class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">About</a>
+          <a href="contact.html"   class="text-xs font-medium text-white uppercase tracking-widest transition-colors">Contact</a>
+        </nav>
+        
+        <div class="flex gap-6">
+          <a href="https://www.linkedin.com/in/jeevan-jyotinkar-pandey-37211415/" class="text-neutral-600 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/jevonit" class="text-neutral-600 hover:text-white transition-colors">Twitter/X</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navHamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    
+    navHamburger.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    };
+    
+    closeMobileMenu.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    // Scroll Reveal
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+  </script>
 </body>
 </html>

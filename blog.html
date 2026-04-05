@@ -3,169 +3,262 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Website Development Post – Pran Kishore</title>
-  <meta name="description" content="The journey to develop this site – Pran Kishore's blog post on learning HTML5 and CSS3.">
-  <meta name="author" content="Pran Kishore">
+  <title>The Journey – Jeevan Pandey</title>
+  <meta name="description" content="The journey to develop this site – Jeevan Pandey's blog post on learning HTML5 and CSS3.">
+  <meta name="author" content="Jeevan Pandey">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Open Graph -->
   <meta property="og:type"        content="article">
-  <meta property="og:url"         content="https://kishorepran.github.io/blog.html">
-  <meta property="og:title"       content="The Journey to Build This Site – Pran Kishore">
+  <meta property="og:url"         content="https://jeevan-pandey.github.io/blog.html">
+  <meta property="og:title"       content="The Journey to Build This Site – Jeevan Pandey">
   <meta property="og:description" content="The journey to develop this site – how an iOS developer learned HTML5 and CSS3 to build his own portfolio.">
-  <meta property="og:image"       content="https://kishorepran.github.io/images/background_blog.jpg">
+  <meta property="og:image"       content="https://jeevan-pandey.github.io/images/background_blog.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:site"        content="@pran_kishore">
-  <meta name="twitter:title"       content="The Journey to Build This Site – Pran Kishore">
+  <meta name="twitter:site"        content="@jevonit">
+  <meta name="twitter:title"       content="The Journey to Build This Site – Jeevan Pandey">
   <meta name="twitter:description" content="The journey to develop this site – how an iOS developer learned HTML5 and CSS3 to build his own portfolio.">
-  <meta name="twitter:image"       content="https://kishorepran.github.io/images/background_blog.jpg">
+  <meta name="twitter:image"       content="https://jeevan-pandey.github.io/images/background_blog.jpg">
   <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="Favicon/favicon.ico">
   <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles/design-system.css">
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            neutral: {
+              950: '#0a0a0a',
+              900: '#171717',
+              800: '#262626',
+              700: '#404040',
+              400: '#a3a3a3',
+              200: '#e5e5e5',
+            }
+          },
+          letterSpacing: {
+            tightest: '-0.07em',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-white/10;
+      }
+      h1, h2, h3 {
+        @apply font-semibold tracking-tight text-white;
+      }
+    }
+    @layer components {
+      .section-divider {
+        @apply border-t border-neutral-900 my-16 md:my-20;
+      }
+      .glass-nav {
+        @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-neutral-950/50 border-b border-neutral-900 transition-all duration-300;
+      }
+      .btn-primary {
+        @apply bg-white hover:bg-neutral-200 text-black font-medium py-3 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+      .btn-secondary {
+        @apply bg-transparent hover:bg-neutral-900 border border-neutral-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+      .minimal-card {
+        @apply border border-neutral-900 rounded-2xl bg-neutral-900/20 hover:border-neutral-700 transition-all duration-500 p-8 md:p-12;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="dark">
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
 
   <!-- ── NAVBAR ───────────────────────────────────────────── -->
   <nav class="glass-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Pran<span class="nav-brand-dot">.</span></a>
-      <div class="nav-links">
-        <a href="index.html"     class="nav-pill">Home</a>
-        <a href="portfolio.html" class="nav-pill">Portfolio</a>
-        <a href="about.html"     class="nav-pill">About</a>
-        <a href="blog.html"      class="nav-pill">Blog</a>
-        <a href="resume.html"    class="nav-pill">Resume</a>
-        <a href="contact.html"   class="nav-pill">Contact</a>
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold text-xl hover:scale-110 transition-transform">J</a>
+      
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Home</a>
+        <a href="portfolio.html" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Portfolio</a>
+        <a href="about.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">About</a>
+        <a href="blog.html"      class="text-sm font-medium text-white transition-colors">Blog</a>
+        <a href="resume.html"    class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Resume</a>
+        <a href="contact.html"   class="px-5 py-2 bg-white text-black rounded-full text-xs font-bold hover:bg-neutral-200 transition-colors ml-4">Contact</a>
       </div>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle"></button>
-        <button class="nav-hamburger" id="nav-hamburger"
-                aria-label="Open navigation menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+
+      <div class="flex items-center gap-4">
+        <button class="md:hidden flex flex-col gap-1.5 w-10 h-10 items-center justify-center rounded-xl bg-neutral-900 border border-neutral-800" id="nav-hamburger" aria-label="Menu">
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html"     class="mobile-nav-pill">Home</a>
-    <a href="portfolio.html" class="mobile-nav-pill">Portfolio</a>
-    <a href="about.html"     class="mobile-nav-pill">About</a>
-    <a href="blog.html"      class="mobile-nav-pill">Blog</a>
-    <a href="resume.html"    class="mobile-nav-pill">Resume</a>
-    <a href="contact.html"   class="mobile-nav-pill">Contact</a>
+  <nav class="fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-2xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+    <a href="index.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">Home</a>
+    <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+    <a href="about.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">About</a>
+    <a href="blog.html"      class="text-3xl font-bold tracking-tighter text-white uppercase">Blog</a>
+    <a href="resume.html"    class="text-3xl font-bold tracking-tighter text-white uppercase">Resume</a>
+    <a href="contact.html"   class="text-3xl font-bold tracking-tighter text-white uppercase">Contact</a>
+    <button class="mt-12 text-neutral-500 font-bold uppercase tracking-widest text-xs" id="close-mobile-menu">CLOSE</button>
   </nav>
 
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="hero" aria-label="Blog hero">
-    <div class="hero-bg"
-         style="background-image: url('images/background_blog.jpg');"
-         role="img" aria-label="Blog page background"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Space for expressing</p>
-      <h1 class="hero-headline"><span class="accent">Discoveries</span>, Thoughts, And More</h1>
+  <section class="reveal active relative pt-32 pb-12 px-6 text-center">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-neutral-500 text-sm font-medium uppercase tracking-widest mb-6">Blog Post</p>
+      <h1 class="text-4xl md:text-7xl lg:text-8xl leading-none mb-8 tracking-tightest uppercase">DISCOVERIES & <span class="text-neutral-500 italic">THOUGHTS.</span></h1>
     </div>
-    <a href="#post" class="hero-scroll" aria-label="Scroll to content">
-      <span class="hero-scroll-label">Scroll</span>
-      <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
   </section>
 
-  <!-- ── BLOG POST ─────────────────────────────────────────── -->
-  <section class="section" id="post" aria-label="Blog post">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body">
-        <article>
-          <p class="post-meta">Posted On: 29/02/2016</p>
-          <h2 class="post-title">The journey to develop this site.</h2>
-          <div class="post-body">
-            <p>
-              The journey began from the day I took off from college after completing my graduation
-              with a dream of developing my own website. When I entered the Industry I started off
-              with mobile application development in iOS and Android, later when I was presented
-              with a requirement to start off with Hybrid mobile application development for its
-              huge time and cost effective property, I realized, it would not be an easy task to
-              dive straight away in it without acquiring convenient knowledge of HTML5 and CSS3.
-            </p>
-            <p>
-              I figured it out as an opportunity to build my website and snag complete knowledge of
-              web designing. I took the firt step of learning through W3C website which eventually
-              made me switch into Adobe Dreamweaver using video tutorials from youtube. The first
-              few days were pretty tough to get along with Dreamweaver as the tool and the UI was
-              quite tough with respect to accuracy. I was facing difficulties with the IDE and
-              Browser in order to provide my website a responsive view. I also came to know about
-              Bootstrap which speeded up things real fast for me and I shifted from Dreamweaver to
-              Open source Software i.e. Aptana Studio 3. I also got acquainted with Pixlr to
-              provide my website a good design where video tutorials from youtube played a major
-              part.
-            </p>
-            <p>
-              I have embedded some links below (See Courtesy) for people interested in developing a
-              website. Incase of any further assistance please feel free to contact me in order to
-              get done with a Suitable Website up and Running in an exclusively small period of
-              time.
-            </p>
-            <p>Thank You for Visiting (",)</p>
-          </div>
+  <!-- ── CURATED READS ──────────────────────────────────────── -->
+  <section class="reveal py-12 px-6 max-w-4xl mx-auto" id="curated-reads">
+    <div class="space-y-16">
+      <div class="space-y-4">
+        <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">Resource Hub</span>
+        <h2 class="text-4xl md:text-6xl leading-tight uppercase tracking-tightest">Insights for <br/> <span class="text-neutral-500 italic">Modern iOS Engineering.</span></h2>
+        <p class="text-neutral-400 text-lg md:text-xl leading-relaxed max-w-2xl">
+          A hand-picked selection of deep-dives, architectural patterns, and engineering standards that I am currently exploring.
+        </p>
+      </div>
 
-          <div style="margin-top:40px;">
-            <a href="courtesy.html" class="glass-btn">Courtesy</a>
-          </div>
-        </article>
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Point-Free -->
+        <div class="space-y-4">
+          <h3 class="text-xl uppercase font-bold">Advanced Functional Swift</h3>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            Exploring <strong>The Composable Architecture (TCA)</strong> and functional patterns via <a href="https://www.pointfree.co" target="_blank" class="text-white border-b border-neutral-800 hover:border-white transition-colors">Point-Free</a>. Essential for large-scale SwiftUI state management.
+          </p>
+        </div>
+
+        <!-- Swift 6 -->
+        <div class="space-y-4">
+          <h3 class="text-xl uppercase font-bold">Swift 6 & Concurrency</h3>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            Mastering safe data races and strict concurrency checking with guides from <a href="https://www.donnywals.com" target="_blank" class="text-white border-b border-neutral-800 hover:border-white transition-colors">Donny Wals</a> and <a href="https://www.avanderlee.com" target="_blank" class="text-white border-b border-neutral-800 hover:border-white transition-colors">SwiftLee</a>.
+          </p>
+        </div>
+
+        <!-- System Design -->
+        <div class="space-y-4">
+          <h3 class="text-xl uppercase font-bold">Mobile System Design</h3>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            Analyzing scalability, modularization, and networking layers for enterprise apps through the <a href="https://github.com/weeeBox/mobile-system-design" target="_blank" class="text-white border-b border-neutral-800 hover:border-white transition-colors">Mobile System Design Framework</a>.
+          </p>
+        </div>
+
+        <!-- Continuous Learning -->
+        <div class="space-y-4">
+          <h3 class="text-xl uppercase font-bold">Industry Standards</h3>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            Staying synchronized with global engineering shifts via <a href="https://iosdevweekly.com" target="_blank" class="text-white border-b border-neutral-800 hover:border-white transition-colors">iOS Dev Weekly</a> and <a href="https://www.objc.io" target="_blank" class="text-white border-b border-neutral-800 hover:border-white transition-colors">objc.io</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-12 border-t border-neutral-900 text-center">
+        <p class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-6">Want to discuss these topics?</p>
+        <a href="contact.html" class="btn-primary">Let's Connect</a>
       </div>
     </div>
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <div class="prefooter-cta">
-    <h3>Got an app idea. Need some help?</h3>
-    <a href="mailto:kishorepran@gmail.com?subject=Connect via website"
-       class="glass-btn glass-btn--primary">Contact Me</a>
-  </div>
+  <section class="reveal py-24 px-6 text-center border-t border-neutral-900">
+    <h3 class="text-4xl md:text-7xl mb-10 tracking-tightest uppercase">Want to connect?</h3>
+    <a href="contact.html" class="btn-primary">Get in touch</a>
+  </section>
 
   </main>
 
   <!-- ── FOOTER ───────────────────────────────────────────── -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html"     class="footer-nav-link">Home</a>
-        <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
-        <a href="about.html"     class="footer-nav-link">About</a>
-        <a href="blog.html"      class="footer-nav-link">Blog</a>
-        <a href="resume.html"    class="footer-nav-link">Resume</a>
-        <a href="contact.html"   class="footer-nav-link">Contact</a>
-        <a href="courtesy.html"  class="footer-nav-link">Courtesy</a>
-      </nav>
-      <div class="footer-social" aria-label="Social media links">
-        <a href="https://www.linkedin.com/in/pran-kishore/"
-           class="footer-social-link" aria-label="LinkedIn"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-linkedin.png" alt="LinkedIn" width="20" height="20">
-        </a>
-        <a href="https://twitter.com/pran_kishore"
-           class="footer-social-link" aria-label="Twitter"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-twitter.png" alt="Twitter" width="20" height="20">
-        </a>
-        <a href="https://www.facebook.com/pran.kishore.1"
-           class="footer-social-link" aria-label="Facebook"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-facebook.png" alt="Facebook" width="20" height="20">
-        </a>
+  <footer class="py-16 px-6 border-t border-neutral-900" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      <div>
+        <a href="index.html" class="text-lg font-bold tracking-tight text-white whitespace-nowrap">Jeevan Pandey<span class="text-neutral-500">.</span></a>
+        <p class="text-neutral-600 text-xs mt-4 uppercase tracking-[0.2em]">&copy; 2026. ALL RIGHTS RESERVED.</p>
       </div>
-      <p class="footer-copyright">&copy; 2015–2026 Pran Kishore. All rights reserved.</p>
+      
+      <div class="flex flex-col items-start md:items-end gap-8">
+        <nav class="flex flex-wrap gap-8" aria-label="Footer navigation">
+          <a href="index.html"     class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Home</a>
+          <a href="portfolio.html" class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Portfolio</a>
+          <a href="about.html"     class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">About</a>
+          <a href="contact.html"   class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Contact</a>
+        </nav>
+        
+        <div class="flex gap-6">
+          <a href="https://www.linkedin.com/in/jeevan-jyotinkar-pandey-37211415/" class="text-neutral-600 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/jevonit" class="text-neutral-600 hover:text-white transition-colors">Twitter/X</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navHamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    
+    navHamburger.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    };
+    
+    closeMobileMenu.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    // Scroll Reveal
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+  </script>
 </body>
 </html>

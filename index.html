@@ -3,225 +3,304 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Mobile App Developer with passion for iOS – Pran Kishore</title>
-  <meta name="description" content="Pran Kishore – iOS mobile app developer building award-winning apps downloaded over a million times.">
-  <meta name="author" content="Pran Kishore">
+  <title>Mobile App Developer with passion for iOS – Jeevan Pandey</title>
+  <meta name="description" content="Jeevan Pandey – iOS mobile app developer building award-winning apps downloaded over a million times.">
+  <meta name="author" content="Jeevan Pandey">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://kishorepran.github.io/">
-  <meta property="og:title"       content="Pran Kishore – iOS App Developer">
+  <meta property="og:url"         content="https://jeevan-pandey.github.io/">
+  <meta property="og:title"       content="Jeevan Pandey – iOS App Developer">
   <meta property="og:description" content="iOS mobile app developer building award-winning apps downloaded over a million times.">
-  <meta property="og:image"       content="https://kishorepran.github.io/images/background_home.jpg">
+  <meta property="og:image"       content="https://jeevan-pandey.github.io/images/background_home.jpg">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:site"        content="@pran_kishore">
-  <meta name="twitter:title"       content="Pran Kishore – iOS App Developer">
+  <meta name="twitter:site"        content="@jevonit">
+  <meta name="twitter:title"       content="Jeevan Pandey – iOS App Developer">
   <meta name="twitter:description" content="iOS mobile app developer building award-winning apps downloaded over a million times.">
-  <meta name="twitter:image"       content="https://kishorepran.github.io/images/background_home.jpg">
+  <meta name="twitter:image"       content="https://jeevan-pandey.github.io/images/background_home.jpg">
   <link rel="icon" href="Favicon/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="Favicon/favicon.ico">
   <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles/design-system.css">
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            neutral: {
+              950: '#0a0a0a',
+              900: '#171717',
+              800: '#262626',
+              700: '#404040',
+              400: '#a3a3a3',
+              200: '#e5e5e5',
+            }
+          },
+          letterSpacing: {
+            tightest: '-0.07em',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-white/10;
+      }
+      h1, h2, h3 {
+        @apply font-semibold tracking-tight text-white;
+      }
+    }
+    @layer components {
+      .section-divider {
+        @apply border-t border-neutral-900 my-16 md:my-20;
+      }
+      .glass-nav {
+        @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-neutral-950/50 border-b border-neutral-900 transition-all duration-300;
+      }
+      .btn-primary {
+        @apply bg-white hover:bg-neutral-200 text-black font-medium py-3 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+      .btn-secondary {
+        @apply bg-transparent hover:bg-neutral-900 border border-neutral-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-200 active:scale-95;
+      }
+      .minimal-card {
+        @apply border border-neutral-900 rounded-2xl bg-neutral-900/20 hover:border-neutral-700 transition-all duration-500 p-8 md:p-12;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="dark">
+  <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
 
   <!-- ── NAVBAR ───────────────────────────────────────────── -->
   <nav class="glass-nav" id="main-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Pran<span class="nav-brand-dot">.</span></a>
-      <div class="nav-links">
-        <a href="index.html"     class="nav-pill">Home</a>
-        <a href="portfolio.html" class="nav-pill">Portfolio</a>
-        <a href="about.html"     class="nav-pill">About</a>
-        <a href="blog.html"      class="nav-pill">Blog</a>
-        <a href="resume.html"    class="nav-pill">Resume</a>
-        <a href="contact.html"   class="nav-pill">Contact</a>
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center font-bold text-xl hover:scale-110 transition-transform">J</a>
+      
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"     class="text-sm font-medium text-white transition-colors">Home</a>
+        <a href="portfolio.html" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Portfolio</a>
+        <a href="about.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">About</a>
+        <a href="blog.html"      class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Blog</a>
+        <a href="resume.html"    class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Resume</a>
+        <a href="contact.html"   class="px-5 py-2 bg-white text-black rounded-full text-xs font-bold hover:bg-neutral-200 transition-colors ml-4">Contact</a>
       </div>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle"></button>
-        <button class="nav-hamburger" id="nav-hamburger"
-                aria-label="Open navigation menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+
+      <div class="flex items-center gap-4">
+        <button class="md:hidden flex flex-col gap-1.5 w-10 h-10 items-center justify-center rounded-xl bg-neutral-900 border border-neutral-800" id="nav-hamburger" aria-label="Menu">
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
+          <span class="w-5 h-0.5 bg-neutral-200"></span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="index.html"     class="mobile-nav-pill">Home</a>
-    <a href="portfolio.html" class="mobile-nav-pill">Portfolio</a>
-    <a href="about.html"     class="mobile-nav-pill">About</a>
-    <a href="blog.html"      class="mobile-nav-pill">Blog</a>
-    <a href="resume.html"    class="mobile-nav-pill">Resume</a>
-    <a href="contact.html"   class="mobile-nav-pill">Contact</a>
+  <nav class="fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-2xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+    <a href="index.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">Home</a>
+    <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+    <a href="about.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">About</a>
+    <a href="blog.html"      class="text-3xl font-bold tracking-tighter text-white uppercase">Blog</a>
+    <a href="resume.html"    class="text-3xl font-bold tracking-tighter text-white uppercase">Resume</a>
+    <a href="contact.html"   class="text-3xl font-bold tracking-tighter text-white uppercase">Contact</a>
+    <button class="mt-12 text-neutral-500 font-bold uppercase tracking-widest text-xs" id="close-mobile-menu">CLOSE</button>
   </nav>
 
   <main id="main-content">
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section class="hero" aria-label="Introduction">
-    <div class="hero-bg"
-         style="background-image: url('images/background_home.jpg');"
-         role="img" aria-label="Hero background"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Mobile Apps developer With a Passion for</p>
-      <h1 class="hero-headline">Developing <span class="accent">iOS Apps</span></h1>
-      <div class="hero-actions">
-        <a href="contact.html" class="glass-btn glass-btn--primary">Contact Me</a>
-        <a href="resume.html"  class="glass-btn">View Resume</a>
+  <section class="relative min-h-[85vh] flex flex-col items-center justify-center px-6 text-center reveal active">
+    <div class="relative z-10 max-w-4xl animate-fade-in">
+      <p class="text-neutral-500 text-sm md:text-base font-medium uppercase tracking-[0.2em] mb-8">iOS Technical Architect</p>
+      <h1 class="text-6xl md:text-8xl lg:text-[10rem] mb-12 leading-[0.85] tracking-tightest">
+        CRAFTING <br/>
+        <span class="text-neutral-500 italic">SOLUTIONS.</span>
+      </h1>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mt-8">
+        <a href="portfolio.html" class="btn-primary">View Work</a>
+        <a href="contact.html" class="btn-secondary">Get in touch</a>
       </div>
     </div>
-    <a href="#background" class="hero-scroll" aria-label="Scroll to content">
-      <span class="hero-scroll-label">Scroll</span>
-      <svg class="hero-scroll-icon" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
+    
+    <a href="#background" class="absolute bottom-8 flex flex-col items-center gap-2 group text-neutral-600 hover:text-white transition-colors">
+      <div class="w-px h-12 bg-gradient-to-b from-neutral-800 to-transparent"></div>
     </a>
   </section>
 
   <!-- ── A BRIEF BACKGROUND ───────────────────────────────── -->
-  <section class="section" id="background" aria-labelledby="bg-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">Background</span>
-        <h2 class="section-title" id="bg-heading">A brief background</h2>
-        <p class="section-subtitle" style="max-width:760px;">
-          I started my carrer as a J2EE developer, but when I was introduced to iOS, I was just
-          amazed at the beauty of Objective C, the power of Xcode, and the well-managed
-          documentation. I have continuously thrived since then, and writing cleaner, more
-          efficient, and better manageable code became my passion. Today, with over 8+ years of
-          experience as a mobile application developer focused on iOS, I'm a DevOps and Design
-          enthusiast. I've had the privilege of working on design award-winning apps that have been
-          downloaded over a million times from the app store. As an AWS Business professional, I'm
-          also keen on cloud and server-side programming. At my leisure, I love watching movies,
-          listening to music, and at times going for a swim - especially in the monsoons.
-        </p>
-      </div>
+  <section class="py-20 px-6 max-w-5xl mx-auto reveal" id="background">
+    <div class="space-y-8">
+      <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">About</span>
+      <h2 class="text-4xl md:text-6xl leading-tight">A BRIEF BACKGROUND.</h2>
+      <p class="text-neutral-400 text-xl md:text-2xl leading-relaxed max-w-3xl">
+        I am an accomplished software engineer specializing in Object Oriented Analysis & Design
+        with over 13 years of experience. Currently serving as a Technical Architect at Cognizant, 
+        I lead the development of complex e-commerce applications with a focus on scalable, high-quality code.
+      </p>
     </div>
   </section>
 
-  <div class="glass-divider"></div>
+  <div class="max-w-6xl mx-auto px-6"><div class="h-px bg-neutral-900"></div></div>
 
   <!-- ── MY LATEST PROJECTS ───────────────────────────────── -->
-  <section class="section" aria-labelledby="projects-heading">
-    <div class="section-header fade-up">
-      <span class="eyebrow">Portfolio</span>
-      <h2 class="section-title" id="projects-heading">My latest projects</h2>
+  <section class="py-20 px-6 max-w-6xl mx-auto reveal" aria-labelledby="projects-heading">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-8">
+      <div>
+        <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest mb-4 block">Portfolio</span>
+        <h2 class="text-4xl md:text-6xl" id="projects-heading">LATEST PROJECTS.</h2>
+      </div>
+      <a href="portfolio.html" class="text-sm font-medium border-b border-neutral-700 pb-1 hover:border-white transition-colors">View all projects</a>
     </div>
 
-    <div class="grid-3 stagger">
+    <div class="grid md:grid-cols-2 gap-12">
 
-      <div class="portfolio-card">
-        <img src="images/portfolio-candian-tire.png"
-             alt="Canadian Tire: Shop Smarter iOS app" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <h3>Canadian Tire: Shop Smarter</h3>
-          <p>By Canadian Tire Corporation</p>
-          <a href="https://apps.apple.com/ca/app/canadian-tire-shop-smarter/id403884878"
-             class="glass-btn glass-btn--sm"
-             target="_blank" rel="noopener noreferrer">View in App Store</a>
+      <div class="group space-y-6">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
+          <img src="images/background_home.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Connected clinical Trials">
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-2xl">Connected clinical Trials</h3>
+          <p class="text-neutral-500">CCT platform for patient-centric trials</p>
         </div>
       </div>
 
-      <div class="portfolio-card">
-        <img src="images/portfolio-deutsche-bank.png"
-             alt="Deutsche Bank Mobile iOS app" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <h3>Deutsche Bank Mobile</h3>
-          <p>By Deutsche Bank AG</p>
-          <a href="https://apps.apple.com/us/app/deutsche-bank-mobile/id1040475847"
-             class="glass-btn glass-btn--sm"
-             target="_blank" rel="noopener noreferrer">View in App Store</a>
+      <div class="group space-y-6">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
+          <img src="images/background_aboutme_new.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Govinda">
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-2xl">Govinda - Tirumala Tirupati</h3>
+          <p class="text-neutral-500">TTD app for devotees of Lord Sri Venkateswara</p>
         </div>
       </div>
 
-      <div class="portfolio-card">
-        <img src="images/portfolio-qatar-airways.png"
-             alt="Qatar Airways iOS app" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <h3>Qatar Airways</h3>
-          <p>By Qatar Airways</p>
-          <a href="https://apps.apple.com/us/app/qatar-airways/id581264644"
-             class="glass-btn glass-btn--sm"
-             target="_blank" rel="noopener noreferrer">View in App Store</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top:40px;" class="fade-up">
-      <a href="portfolio.html" class="glass-btn">View More Projects</a>
     </div>
   </section>
 
-  <div class="glass-divider"></div>
+  <div class="max-w-6xl mx-auto px-6"><div class="h-px bg-neutral-900"></div></div>
 
   <!-- ── THE JOURNEY ──────────────────────────────────────── -->
-  <section class="section" aria-labelledby="journey-heading">
-    <div class="glass-card fade-up">
-      <div class="glass-card-body glass-card-body--centered">
-        <span class="eyebrow">Blog</span>
-        <h2 class="section-title" id="journey-heading"
-            style="margin-bottom:24px;">The journey to develop this site.</h2>
-        <p class="section-subtitle" style="margin-bottom:36px;">
-          The journey began from the day I took off from college after completing my graduation
-          with a dream of developing my own website. When I entered the Industry I started off
-          with mobile application development in iOS and Android, later when I was presented with
-          a requirement to start off with Hybrid mobile application development for its huge time
-          and cost effective property, I realized, it would not be an easy task to dive straight
-          away in it without acquiring convenient knowledge of HTML5 and CSS3...
-        </p>
-        <a href="blog.html" class="glass-btn">Read Post</a>
-      </div>
+  <section class="py-20 px-6 max-w-5xl mx-auto reveal" aria-labelledby="journey-heading">
+    <div class="space-y-8">
+      <span class="text-neutral-500 text-xs font-bold uppercase tracking-widest block">Story</span>
+      <h2 class="text-4xl md:text-6xl" id="journey-heading">THE JOURNEY.</h2>
+      <p class="text-neutral-400 text-xl md:text-2xl leading-relaxed max-w-3xl">
+        The journey began from the day I took off from college with a dream of developing my own website. 
+        It led me from iOS development to mastering the full stack of web and mobile technologies.
+      </p>
+      <a href="blog.html" class="inline-block text-sm font-medium border-b border-neutral-700 pb-1 hover:border-white transition-colors">Read the full story</a>
     </div>
   </section>
 
   <!-- ── PRE-FOOTER CTA ───────────────────────────────────── -->
-  <div class="prefooter-cta">
-    <h3>Got an app idea. Need some help?</h3>
-    <a href="mailto:kishorepran@gmail.com?subject=Connect via website"
-       class="glass-btn glass-btn--primary">Contact Me</a>
-  </div>
+  <section class="py-20 px-6 text-center border-t border-neutral-900 reveal">
+    <h3 class="text-4xl md:text-7xl mb-8 tracking-tightest">HAVE AN IDEA?</h3>
+    <a href="mailto:jevonit.as@gmail.com" class="btn-primary">Connect with me</a>
+  </section>
 
   </main>
 
   <!-- ── FOOTER ───────────────────────────────────────────── -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="index.html"     class="footer-nav-link">Home</a>
-        <a href="portfolio.html" class="footer-nav-link">Portfolio</a>
-        <a href="about.html"     class="footer-nav-link">About</a>
-        <a href="blog.html"      class="footer-nav-link">Blog</a>
-        <a href="resume.html"    class="footer-nav-link">Resume</a>
-        <a href="contact.html"   class="footer-nav-link">Contact</a>
-        <a href="courtesy.html"  class="footer-nav-link">Courtesy</a>
-      </nav>
-      <div class="footer-social" aria-label="Social media links">
-        <a href="https://www.linkedin.com/in/pran-kishore/"
-           class="footer-social-link" aria-label="LinkedIn"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-linkedin.png" alt="LinkedIn" width="20" height="20">
-        </a>
-        <a href="https://twitter.com/pran_kishore"
-           class="footer-social-link" aria-label="Twitter"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-twitter.png" alt="Twitter" width="20" height="20">
-        </a>
-        <a href="https://www.facebook.com/pran.kishore.1"
-           class="footer-social-link" aria-label="Facebook"
-           target="_blank" rel="noopener noreferrer">
-          <img src="images/social-facebook.png" alt="Facebook" width="20" height="20">
-        </a>
+  <footer class="py-12 px-6 border-t border-neutral-900" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      <div>
+        <a href="index.html" class="text-lg font-bold tracking-tight text-white whitespace-nowrap">Jeevan Pandey<span class="text-neutral-500">.</span></a>
+        <p class="text-neutral-600 text-xs mt-4 uppercase tracking-[0.2em]">&copy; 2026. ALL RIGHTS RESERVED.</p>
       </div>
-      <p class="footer-copyright">&copy; 2015–2026 Pran Kishore. All rights reserved.</p>
+      
+      <div class="flex flex-col items-start md:items-end gap-8">
+        <nav class="flex flex-wrap gap-8" aria-label="Footer navigation">
+          <a href="index.html"     class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Home</a>
+          <a href="portfolio.html" class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Portfolio</a>
+          <a href="about.html"     class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">About</a>
+          <a href="contact.html"   class="text-xs font-medium text-neutral-500 hover:text-white uppercase tracking-widest transition-colors">Contact</a>
+        </nav>
+        
+        <div class="flex gap-6">
+          <a href="https://www.linkedin.com/in/jeevan-jyotinkar-pandey-37211415/" class="text-neutral-600 hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://x.com/jevonit" class="text-neutral-600 hover:text-white transition-colors">Twitter/X</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const navHamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    
+    navHamburger.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+    
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    };
+    
+    closeMobileMenu.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    // Simple Intersection Observer for Fade-in animations
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-fade-in').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
