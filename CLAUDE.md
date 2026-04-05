@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static personal portfolio website for Pran Kishore, hosted on GitHub Pages at `kishorepran.github.io`. There is no build system, package manager, or compilation step — changes are deployed by pushing to the `master` branch.
+This is a static personal portfolio website for Jeevan Pandey, hosted on GitHub Pages at `jeevan-pandey.github.io`. There is no build system, package manager, or compilation step — changes are deployed by pushing to the `master` branch.
 
 ## Viewing the Site
 
@@ -48,7 +48,7 @@ The site is built with plain HTML, CSS, and vanilla JS — no frameworks, no bun
 
 **Assets:**
 - `images/` — background images per page (named `background_<page>.jpg`), portfolio thumbnails, social icons
-- `pdf-docs/pran-kishore-cv.pdf` — the downloadable resume PDF
+- `references/jeevan_resume_ios.pdf` — the downloadable resume PDF
 - `Favicon/` — favicon and Apple touch icon
 - `images/background_optimizeitsystems.jpg` — **does not exist**; the Optimize IT Systems section in `about.html` uses `.company-banner--fallback` for a CSS gradient fallback
 
@@ -56,6 +56,6 @@ The site is built with plain HTML, CSS, and vanilla JS — no frameworks, no bun
 
 Since there are no shared templates or includes, the navbar and footer are duplicated in every HTML file. When adding a nav item or page, update all 7 HTML files.
 
-The resume content lives in `resume.html`; the downloadable PDF at `pdf-docs/pran-kishore-cv.pdf` must be kept in sync manually.
+The resume content lives in `resume.html`; the downloadable PDF at `references/jeevan_resume_ios.pdf` must be kept in sync manually.
 
 To change colours or glass intensity, edit the CSS variables at the top of `styles/design-system.css` — they cascade everywhere automatically.
