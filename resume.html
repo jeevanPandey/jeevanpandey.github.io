@@ -104,7 +104,20 @@
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Home</a>
-        <a href="portfolio.html" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Portfolio</a>
+        <!-- Portfolio Dropdown -->
+        <div class="relative group">
+          <a href="portfolio.html" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors flex items-center gap-1">
+            Portfolio
+            <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <div class="absolute left-0 pt-4 hidden group-hover:block w-48 animate-in fade-in slide-in-from-top-2 duration-200">
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-2 shadow-2xl backdrop-blur-xl bg-opacity-90">
+              <a href="resume.html#technologies" class="block px-4 py-2 text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">SKILLS</a>
+              <a href="portfolio.html#work-intro" class="block px-4 py-2 text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">PROJECTS</a>
+              <a href="resume.html#experience" class="block px-4 py-2 text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">EXPERIENCE</a>
+            </div>
+          </div>
+        </div>
         <a href="about.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">About</a>
         <a href="blog.html"      class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Blog</a>
         <a href="resume.html"    class="text-sm font-medium text-white transition-colors">Resume</a>
@@ -124,7 +137,14 @@
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
   <nav class="fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-2xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
     <a href="index.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">Home</a>
-    <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+    <div class="flex flex-col items-center gap-4 py-4 border-y border-neutral-900 w-full">
+      <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+      <div class="flex gap-6">
+        <a href="resume.html#technologies" class="text-xs font-bold tracking-widest text-neutral-500 hover:text-white uppercase">Skills</a>
+        <a href="portfolio.html#work-intro" class="text-xs font-bold tracking-widest text-neutral-500 hover:text-white uppercase">Projects</a>
+        <a href="resume.html#experience" class="text-xs font-bold tracking-widest text-neutral-500 hover:text-white uppercase">Experience</a>
+      </div>
+    </div>
     <a href="about.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">About</a>
     <a href="blog.html"      class="text-3xl font-bold tracking-tighter text-white uppercase">Blog</a>
     <a href="resume.html"    class="text-3xl font-bold tracking-tighter text-white uppercase">Resume</a>
@@ -139,7 +159,7 @@
     <div class="max-w-4xl mx-auto">
       <p class="text-neutral-500 text-sm font-medium uppercase tracking-widest mb-6">Experience & Skills</p>
       <h1 class="text-6xl md:text-8xl lg:text-9xl leading-none mb-8 tracking-tightest uppercase">MY <span class="text-neutral-500 italic">RESUME.</span></h1>
-      <a href="references/jeevan_resume_ios.pdf" class="btn-primary" download>Download PDF</a>
+      <a href="references/Resume_original.pdf" class="btn-primary" download>Download PDF</a>
     </div>
   </section>
 
@@ -174,7 +194,7 @@
   </section>
 
   <!-- ── WORK EXPERIENCE ──────────────────────────────────── -->
-  <section class="reveal py-24 px-6 max-w-6xl mx-auto border-t border-neutral-900">
+  <section class="reveal py-24 px-6 max-w-6xl mx-auto border-t border-neutral-900" id="experience">
     <div class="grid md:grid-cols-4 gap-8 md:gap-12">
       <div class="md:col-span-1">
         <h2 class="text-xs text-neutral-500 font-bold uppercase tracking-widest sticky top-32">Experience</h2>
@@ -184,23 +204,73 @@
         <div class="space-y-4 md:space-y-6">
           <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-4">
             <h3 class="text-2xl md:text-3xl uppercase">Technical Architect</h3>
-            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">2022 – Present</span>
+            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">09/2022 – Present</span>
           </div>
-          <p class="text-neutral-500 font-medium">Cognizant Technology Solutions</p>
-          <p class="text-neutral-400 text-lg leading-relaxed max-w-2xl">
-            Leading development of complex e-commerce applications. Architecting scalable solutions and overseeing technical strategy.
-          </p>
+          <p class="text-neutral-500 font-medium">Cognizant</p>
+          <ul class="text-neutral-400 text-lg leading-relaxed max-w-2xl list-disc list-outside ml-5 space-y-2">
+            <li>Define the architecture of mobile applications</li>
+            <li>Collaborated with cross-functional teams to define and deliver new features</li>
+            <li>Provide accurate estimation and project planning</li>
+            <li>Lead and mentor the development team</li>
+            <li>Develop High-Level Design (HLD) and Low-Level Design (LLD) documents</li>
+          </ul>
         </div>
 
         <div class="space-y-4 md:space-y-6">
           <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-4">
             <h3 class="text-2xl md:text-3xl uppercase">Assistant Consultant</h3>
-            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">2019 – 2022</span>
+            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">05/2019 – 09/2022</span>
           </div>
-          <p class="text-neutral-500 font-medium">Tata Consultancy Services</p>
-          <p class="text-neutral-400 text-lg leading-relaxed max-w-2xl">
-            Designed and developed applications from scratch. Managed cross-functional teams and deployment cycles.
-          </p>
+          <p class="text-neutral-500 font-medium">Tata Consultancy Services (TCS)</p>
+          <ul class="text-neutral-400 text-lg leading-relaxed max-w-2xl list-disc list-outside ml-5 space-y-2">
+            <li>Designed and developed iOS applications from scratch</li>
+            <li>Collaborated with cross-functional teams to define and deliver new features</li>
+            <li>Integrated firebase for analytics and crashlytics purposes.</li>
+            <li>Prepared High-Level Design (HLD) and design documents</li>
+            <li>Uploaded apps to the App Store and TestFlight</li>
+            <li>Engaged with clients and delivered reliable time estimates</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-4">
+            <h3 class="text-2xl md:text-3xl uppercase">Tech Lead</h3>
+            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">04/2015 – 04/2019</span>
+          </div>
+          <p class="text-neutral-500 font-medium">Atlogys Technical consulting</p>
+          <ul class="text-neutral-400 text-lg leading-relaxed max-w-2xl list-disc list-outside ml-5 space-y-2">
+            <li>Designed and developed robust app architectures</li>
+            <li>Integrated web APIs and conducted feasibility checks</li>
+            <li>Created Software Requirements Specification (SRS) and HLD documents</li>
+            <li>Mentored and guided junior team members</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-4">
+            <h3 class="text-2xl md:text-3xl uppercase">Senior Software Engineer</h3>
+            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">01/2014 – 04/2015</span>
+          </div>
+          <p class="text-neutral-500 font-medium">Algoworks</p>
+          <ul class="text-neutral-400 text-lg leading-relaxed max-w-2xl list-disc list-outside ml-5 space-y-2">
+            <li>Oversaw end-to-end development of iOS applications</li>
+            <li>Integrated web APIs and third-party libraries.</li>
+            <li>Developed map-based discovery screens and real-time chat features.</li>
+            <li>Mentored juniors for skill upskilling and provided production bug support.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-4">
+            <h3 class="text-2xl md:text-3xl uppercase">Software Engineer</h3>
+            <span class="text-sm font-medium text-neutral-500 uppercase tracking-widest">07/2011 – 01/2014</span>
+          </div>
+          <p class="text-neutral-500 font-medium">iGATE (now merged into Capgemini)</p>
+          <ul class="text-neutral-400 text-lg leading-relaxed max-w-2xl list-disc list-outside ml-5 space-y-2">
+            <li>Designed and constructed advanced iOS applications</li>
+            <li>Troubleshooted issues and enhanced application performance</li>
+            <li>Implemented role-based workflows and digital document processes.</li>
+          </ul>
         </div>
 
       </div>

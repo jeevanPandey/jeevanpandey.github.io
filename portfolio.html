@@ -107,7 +107,20 @@
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center gap-8">
         <a href="index.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Home</a>
-        <a href="portfolio.html" class="text-sm font-medium text-white transition-colors">Portfolio</a>
+        <!-- Portfolio Dropdown -->
+        <div class="relative group">
+          <a href="portfolio.html" class="text-sm font-medium text-white transition-colors flex items-center gap-1">
+            Portfolio
+            <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <div class="absolute left-0 pt-4 hidden group-hover:block w-48 animate-in fade-in slide-in-from-top-2 duration-200">
+            <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-2 shadow-2xl backdrop-blur-xl bg-opacity-90">
+              <a href="resume.html#technologies" class="block px-4 py-2 text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">SKILLS</a>
+              <a href="portfolio.html#work-intro" class="block px-4 py-2 text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">PROJECTS</a>
+              <a href="resume.html#experience" class="block px-4 py-2 text-xs font-medium text-neutral-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors">EXPERIENCE</a>
+            </div>
+          </div>
+        </div>
         <a href="about.html"     class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">About</a>
         <a href="blog.html"      class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Blog</a>
         <a href="resume.html"    class="text-sm font-medium text-neutral-400 hover:text-white transition-colors">Resume</a>
@@ -127,7 +140,14 @@
   <!-- ── MOBILE MENU ──────────────────────────────────────── -->
   <nav class="fixed inset-0 z-40 bg-neutral-950/98 backdrop-blur-2xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
     <a href="index.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">Home</a>
-    <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+    <div class="flex flex-col items-center gap-4 py-4 border-y border-neutral-900 w-full">
+      <a href="portfolio.html" class="text-3xl font-bold tracking-tighter text-white uppercase">Portfolio</a>
+      <div class="flex gap-6">
+        <a href="resume.html#technologies" class="text-xs font-bold tracking-widest text-neutral-500 hover:text-white uppercase">Skills</a>
+        <a href="portfolio.html#work-intro" class="text-xs font-bold tracking-widest text-neutral-500 hover:text-white uppercase">Projects</a>
+        <a href="resume.html#experience" class="text-xs font-bold tracking-widest text-neutral-500 hover:text-white uppercase">Experience</a>
+      </div>
+    </div>
     <a href="about.html"     class="text-3xl font-bold tracking-tighter text-white uppercase">About</a>
     <a href="blog.html"      class="text-3xl font-bold tracking-tighter text-white uppercase">Blog</a>
     <a href="resume.html"    class="text-3xl font-bold tracking-tighter text-white uppercase">Resume</a>
@@ -159,6 +179,45 @@
   <!-- ── PROJECT GRID ─────────────────────────────────────── -->
   <section class="py-24 px-6 max-w-6xl mx-auto" aria-label="Project portfolio">
     <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+
+      <!-- Project: Airways app -->
+      <div class="group space-y-6 reveal">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
+          <img src="images/background_home.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Airways app">
+        </div>
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <h3 class="text-2xl md:text-3xl uppercase">Airways app</h3>
+            <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest border border-neutral-800 px-2 py-1 rounded">Latest</span>
+          </div>
+          <p class="text-neutral-500 text-lg">Spearheaded development of critical Login/Signup, Profile, and Profile Settings modules.</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">Swift 6</span>
+            <span class="tech-tag">Combine</span>
+            <span class="tech-tag">Modularization</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project: Digital banking app -->
+      <div class="group space-y-6 reveal">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-900">
+          <img src="images/background_aboutme_new.jpg" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" alt="Digital banking app">
+        </div>
+        <div class="space-y-3">
+          <div class="flex justify-between items-start">
+            <h3 class="text-2xl md:text-3xl uppercase">Digital banking app</h3>
+            <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest border border-neutral-800 px-2 py-1 rounded">2022</span>
+          </div>
+          <p class="text-neutral-500 text-lg">Developed and maintained the Compliance sub-module based on server-driven UI.</p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tech-tag">Server-driven UI</span>
+            <span class="tech-tag">CocoaPods</span>
+            <span class="tech-tag">Fastlane</span>
+          </div>
+        </div>
+      </div>
 
       <!-- Project 1 -->
       <div class="group space-y-6 reveal">
