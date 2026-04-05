@@ -1,28 +1,61 @@
-# Project Type
+# GEMINI.md
 
-This is a **Non-Code Project**. It is a static personal portfolio website.
+This file provides guidance to Gemini CLI when working with code in this repository.
 
-# Directory Overview
+## Project Overview
 
-This directory contains a personal portfolio website. It is a static website built with plain HTML and CSS. The project is hosted on GitHub Pages.
+This is a static personal portfolio website for Jeevan Pandey, hosted on GitHub Pages at `jeevan-pandey.github.io`. There is no build system, package manager, or compilation step — changes are deployed by pushing to the `master` branch.
 
-# Key Files
+## Viewing the Site
 
-*   `index.html`: The main landing page of the website.
-*   `portfolio.html`: The portfolio page.
-*   `about.html`: The about page.
-*   `blog.html`: The blog page.
-*   `resume.html`: The resume page.
-*   `contact.html`: The contact page.
-*   `courtesy.html`: A courtesy/thank you page.
-*   `w3.css`: A CSS framework used for styling the website.
-*   `common-custom.css`: Shared custom styles across the website.
-*   `*-custom.css` & `resume_custom.css`: Page-specific custom styles (e.g., `about-custom.css`, `blog-custom.css`).
-*   `Favicon/`: This folder contains the favicon of the website.
-*   `images/`: This folder contains the images used in the website.
-*   `pdf-docs/`: This folder contains the pdf documents used in the website.
-*   `README.md`: Basic repository information.
+Open any `.html` file directly in a browser, or use a local HTTP server:
 
-# Usage
+```bash
+python3 -m http.server 8000
+# Then visit http://localhost:8000
+```
 
-The website can be viewed by opening the `index.html` file in a web browser. Since it's hosted on GitHub Pages, it can also be accessed online.
+## Architecture
+
+The site is built with plain HTML, CSS, and vanilla JS — no frameworks, no bundlers, no dependencies.
+
+**Design system:** `styles/design-system.css` is the single source of truth for all visual styles. It defines CSS custom properties (design tokens) and every reusable class. Every HTML page links only to this file. The old CSS files (`common-custom.css`, `*-custom.css`, `w3.css`) are no longer linked in any page and can be ignored.
+
+**JavaScript:** `scripts/main.js` is a single self-executing module that handles: theme toggle (dark/light, persisted in localStorage), navbar scroll behaviour, mobile hamburger menu, Intersection Observer scroll animations, active nav item detection, and hero parallax.
+
+**Page structure pattern:** All pages share the same layout skeleton:
+1. Fixed glass navbar (`<nav class="glass-nav">`) — pill-shaped nav links, theme toggle, hamburger
+2. Full-viewport hero section (`<section class="hero">`) with parallax background image
+3. Content sections using `<section class="section">` with glass cards (`.glass-card`), grids (`.grid-3`, `.grid-2`), or the resume two-column layout (`.resume-layout`)
+4. Pre-footer CTA block (`.prefooter-cta`)
+5. Footer (`.site-footer`)
+
+**Key CSS classes in `styles/design-system.css`:**
+- `.glass-card` / `.glass-card-body` — frosted glass content card
+- `.portfolio-card` / `.portfolio-card-overlay` — image card with hover-reveal overlay
+- `.glass-btn`, `.glass-btn--primary`, `.glass-btn--sm` — pill buttons
+- `.nav-pill` / `.mobile-nav-pill` — navbar link pills
+- `.company-banner` / `.company-banner-bg` — full-width background image banner (About page)
+- `.resume-layout` — two-column sticky-label layout (Resume and Courtesy pages)
+- `.fade-up`, `.fade-in`, `.stagger` — scroll animation triggers (JS adds `.visible` class)
+- `.eyebrow` — small uppercase accent label above section titles
+
+**CSS design tokens (most important):**
+- `--glass-bg`, `--glass-border`, `--glass-shadow` — the three glass material values
+- `--accent-blue` (`#0A84FF`), `--accent-purple` (`#BF5AF2`), `--accent-teal` (`#5AC8F5`) — Apple system colours
+- `--blur-sm`, `--blur-md` — `backdrop-filter` values for glass surfaces
+- `[data-theme="light"]` selector overrides all dark-mode tokens for light mode
+
+**Assets:**
+- `images/` — background images per page (named `background_<page>.jpg`), portfolio thumbnails, social icons
+- `references/jeevan_resume_ios.pdf` — the downloadable resume PDF
+- `Favicon/` — favicon and Apple touch icon
+- `images/background_optimizeitsystems.jpg` — **does not exist**; the Optimize IT Systems section in `about.html` uses `.company-banner--fallback` for a CSS gradient fallback
+
+## Making Changes
+
+Since there are no shared templates or includes, the navbar and footer are duplicated in every HTML file. When adding a nav item or page, update all 7 HTML files.
+
+The resume content lives in `resume.html`; the downloadable PDF at `references/jeevan_resume_ios.pdf` must be kept in sync manually.
+
+To change colours or glass intensity, edit the CSS variables at the top of `styles/design-system.css` — they cascade everywhere automatically.
